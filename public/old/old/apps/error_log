@@ -1,0 +1,5 @@
+[06-Aug-2014 01:13:26 Asia/Yekaterinburg] PHP Warning:  count() expects at least 1 parameter, 0 given in /home/bestho/public_html/vkapps/stars.php on line 110
+[06-Aug-2014 10:16:21 Asia/Yekaterinburg] PHP Parse error:  syntax error, unexpected T_IF in /home/bestho/public_html/vkapps/makegraph.php on line 99
+[06-Aug-2014 10:16:35 Asia/Yekaterinburg] PHP Parse error:  syntax error, unexpected '}', expecting ')' in /home/bestho/public_html/vkapps/makegraph.php on line 108
+[06-Aug-2014 08:49:32 Europe/Moscow] PHP Parse error:  syntax error, unexpected '}' in /home/bestho/public_html/vkapps/index.php on line 76
+[06-Aug-2014 16:16:09 Asia/Yekaterinburg] PHP Parse error:  syntax error, unexpected '<' in /home/bestho/public_html/vkapps/makegraph.php on line 159

@@ -1,0 +1,21 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /week2/
+Disallow: /natal/
+Disallow: /apps/
+
+User-agent: Yandex
+Disallow: /admin/
+Disallow: /week2/
+Disallow: /natal/
+Disallow: /apps/
+Host: best-horoscope.ru
+
+User-agent: Teoma, DISCo Pump, Wget, WebZIP, Teleport Pro, WebSnake, Offline Explorer, Web-By-Mail, Teleport Pro/1.29, Scooter-W3-1.0, Scooter, Lycos, Aport, WebAlta, Slurp, msnbot, Quintura-Crw, Turtle, twiceler
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: Dolphin
+Disallow: /

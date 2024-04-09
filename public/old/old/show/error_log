@@ -1,0 +1,7 @@
+[21-Jul-2014 11:40:23 Asia/Yekaterinburg] PHP Parse error:  syntax error, unexpected '[' in /home/bestho/public_html/show/makegraph.inc on line 4
+[21-Jul-2014 11:45:10 Asia/Yekaterinburg] PHP Parse error:  syntax error, unexpected '[' in /home/bestho/public_html/show/makegraph.inc on line 4
+[21-Jul-2014 11:45:43 Asia/Yekaterinburg] PHP Parse error:  syntax error, unexpected '[' in /home/bestho/public_html/show/makegraph.inc on line 43
+[21-Jul-2014 11:53:58 Asia/Yekaterinburg] PHP Parse error:  syntax error, unexpected '[' in /home/bestho/public_html/show/makegraph.inc on line 55
+[21-Jul-2014 14:54:05 Europe/Moscow] PHP Parse error:  syntax error, unexpected $end in /home/bestho/public_html/show/index.php on line 247
+[21-Jul-2014 14:54:08 Europe/Moscow] PHP Parse error:  syntax error, unexpected $end in /home/bestho/public_html/show/index.php on line 247
+[21-Jul-2014 15:20:12 Europe/Moscow] PHP Parse error:  syntax error, unexpected $end in /home/bestho/public_html/show/index.php on line 248

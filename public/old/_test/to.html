@@ -1,0 +1,30 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <style>
+        .link{
+            border-bottom: 1px dashed;
+            cursor: pointer;
+        }
+    </style>
+    </head>
+<body>
+    Для правильно работы необходимо перезапустить Google Chrome с доп. параметром: chrome.exe -disable-web-security<br>
+    <span class="link">Фамилия</span>
+    <br><br>
+    <iframe id="gibdd" src="http://eaisto.gibdd.ru/" style="width:100%; height: 100%;"></iframe>
+
+    <script>
+        var ifrm = document.getElementById('gibdd');
+        ifrm.onload = function() {
+            console.log("QQQ");
+            var doc = ifrm.contentDocument? ifrm.contentDocument: ifrm.contentWindow.document;
+            var win = ifrm.contentWindow;
+            var form = doc.getElementById('form_element');
+            var login = form.elements.login_id;
+            $(login).val("QQQ")
+        }
+    </script>
+</body>
+</html>

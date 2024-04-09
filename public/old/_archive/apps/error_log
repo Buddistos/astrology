@@ -1,0 +1,8 @@
+[21-Jul-2014 13:52:19 Europe/Moscow] PHP Parse error:  syntax error, unexpected '[' in /home/bestho/public_html/apps/body.php on line 71
+[21-Jul-2014 13:53:04 Europe/Moscow] PHP Parse error:  syntax error, unexpected '[' in /home/bestho/public_html/apps/body.php on line 71
+[21-Jul-2014 13:57:42 Europe/Moscow] PHP Parse error:  syntax error, unexpected '[' in /home/bestho/public_html/apps/body.php on line 71
+[21-Jul-2014 13:58:19 Europe/Moscow] PHP Parse error:  syntax error, unexpected '[' in /home/bestho/public_html/apps/body.php on line 71
+[21-Jul-2014 15:59:38 Asia/Yekaterinburg] PHP Parse error:  syntax error, unexpected '[' in /home/bestho/public_html/apps/makegraph.inc on line 4
+[21-Jul-2014 17:39:09 Europe/Moscow] PHP Parse error:  syntax error, unexpected T_ENDIF in /home/bestho/public_html/apps/index.php on line 262
+[21-Jul-2014 17:39:17 Europe/Moscow] PHP Parse error:  syntax error, unexpected T_ENDIF in /home/bestho/public_html/apps/index.php on line 262
+[22-Jul-2014 00:12:37 Asia/Yekaterinburg] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bestho/public_html/apps/body.php:49) in /home/bestho/public_html/apps/body.php on line 76

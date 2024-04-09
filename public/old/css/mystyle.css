@@ -1,0 +1,395 @@
+body{
+    background: url("../images/bg3.jpg");
+}
+input[type="text"], input[type="email"]{
+    border-radius: 3px;
+    font-size: 18px;
+    width: 280px;
+    padding: 5px;
+}
+input[type="submit"]{
+    font-size: 16px;
+    width: 370px;
+    margin-left: 35px;
+    padding: 10px;
+    white-space: pre-wrap;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+a, img, input{
+    outline: none;
+}
+p, a, span, b, strong, li{
+    font-size: 20px;
+    font-family: 'Marmelad', sans-serif;
+    font-weight: 400;
+    color: #333;
+}
+a{
+    color: indigo;
+}
+b, strong{
+    color: black;
+}
+h1{
+    font-size: 36px;
+}
+h2{
+    font-size: 32px;
+}
+h3{
+    font-size: 24px;
+}
+h4{
+    font-size: 20px;
+}
+p{
+    text-align: justify;
+}
+h1, h2, h3, h4{
+    text-align: center;
+    font-family: 'Marmelad', cursive;
+    font-weight: 400;
+    color: black;
+}
+.aligncenter{
+    text-align: center;
+    margin: 0 auto;
+}
+.attention{
+    color: orangered;
+}
+.textshadow{
+    text-shadow: 0px 0px 40px rgba(255, 255, 255, 1);
+}
+.shadowing, .sociallocker {
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 5px;
+    -webkit-box-shadow: 5px 5px 7px rgba(0,0,0,0.08);
+    -moz-box-shadow: 5px 5px 7px rgba(0,0,0,0.08);
+    box-shadow: 5px 5px 7px rgba(0,0,0,0.08);
+    background: #f5f5f5;
+    margin: 10px 5px;
+}
+
+#inform{
+    font-size: 12px;
+    border: 1px solid green;
+    width: 213px;
+    color: green;
+    display: none;
+    padding: 0 5px;
+    overflow: hidden;
+}
+#inform p{
+    text-align: left;
+}
+.ymaps-b-form-input__box{
+    margin-right: 10px;
+}
+.container{
+    margin: 0 auto;
+    width: 960px;
+    overflow: hidden;
+    padding: 10px 10px 0 10px;
+    margin-top: 40px;
+}
+body{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.block{
+    padding: 10px 20px 20px 20px;
+    margin: 20px;
+    margin-bottom: 40px;
+    background: url("../images/blockbg.jpg");
+    border-radius: 15px;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 40px rgba(255,255,255,0.7);
+    -moz-box-shadow: 0px 0px 40px rgba(255,255,255,0.7);
+    box-shadow: 0px 0px 40px rgba(255,255,255,0.7);
+}
+#menu{
+    text-align: center;
+    margin-top: -80px;
+    position: fixed;
+    padding-bottom: 0;
+    border: 1px solid grey;
+    -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    width: 880px;
+    z-index: 500;
+}
+#menu a{
+    display: block;
+    padding: 20px 30px 10px 30px;
+    float: left;
+    text-decoration: none;
+    color: darkred;
+}
+#menu a:hover{
+    color: orangered;
+}
+.innertext{
+    width: 530px;
+    margin: 0 auto;
+    text-align: center;
+}
+.ourgoro{
+    width: 250px; 
+    height: 375px;
+    float: left;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid grey;
+    margin: 0 20px 40px 20px;
+    background: #fff;
+    background: url('../images/action/goroback.png');
+}
+.ourgoro a.more{
+    display: block;
+    text-decoration: none;
+    margin: 0;
+    color: darkgrey;
+    padding-top: 130px;
+    padding-bottom: 38px;
+}
+.ourgoro h2{
+    margin-bottom: 120px;
+}
+#_love{
+    background: url('../images/love.png') no-repeat;
+    background-size: 100%;
+}
+#_love h2{
+    color: deeppink;
+}
+#_auto{
+    background: url('../images/auto.png') no-repeat;
+    background-size: 100%;
+}
+#_auto h2{
+    color: goldenrod;
+}
+#_health{
+    background: url('../images/health.png') no-repeat;
+    background-size: 100%;
+}
+#_health h2{
+    color: red;
+}
+#_holyday{
+    background: url('../images/holyday.png') no-repeat;
+    background-size: 100%;
+}
+#_holyday h2{
+    color: orangered;
+}
+#_finance{
+    background: url('../images/finance.png') no-repeat;
+    background-size: 100%;
+}
+#_finance h2{
+    color: green;
+}
+#_business{
+    background: url('../images/business.png') no-repeat;
+    background-size: 100%;
+}
+#_business h2{
+    color: blue;
+}
+.popup_modal{
+    width: 700px;
+    padding: 20px 20px 20px 20px;
+    line-height: 26px;
+    position: relative;
+    display: none;
+    border: 4px solid rgba(0,0,0,0.5); border-radius: 10px;
+    background: url('../images/action/goroback.png');
+    z-index: 1001!important;
+}
+.modal_head {
+    position: relative;
+    float: left;
+    margin-right: 20px;
+}
+.popup_modal img{
+    border: 2px solid gray;
+    border-radius: 5px;
+    width: 200px;
+    background: white;
+    margin-top: 25px;
+}
+.popup_modal p{
+    text-indent: inherit;
+}
+.b-modal{
+    z-index: 1000!important;
+}
+#order{
+    display: none;
+    width: 580px;
+}
+#order p{
+    margin: 10px 0;
+    clear: both;
+    float: left;
+}
+#order p, #order strong, #order b{
+    font-size: 14px;
+}
+#order .jq-selectbox__dropdown ul{
+    max-height: 180px;
+}
+#order .jqselect{
+    float: left;
+    margin-right: 10px;
+    border-radius: 3px;
+    font-size: 18px;
+    height: 25px;
+}
+.jq-selectbox__dropdown li{
+    font-size: 18px;
+}
+.jq-selectbox.width-80{
+    width: 80px;
+}
+.jq-selectbox.width-180{
+    width: 180px;
+}
+.jq-selectbox.width-90{
+    width: 90px;
+}
+.jq-selectbox__select{
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px;
+}
+.problem div{
+    margin: 0 auto;
+    width: 800px;
+    clear: both;
+    overflow: hidden;
+}
+.problem img{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    margin-top: 20px;
+}
+.problem .alignleft img{
+    float: right;
+}
+.problem .alignright img{
+    float: left;
+}
+.choice div{
+    width: 420px;
+    margin-bottom: 40px;
+    float: left;
+    padding: 0 10px;
+}
+.problem b{
+    font-size: 24px;
+}
+.feature{
+    width: 850px;
+    margin-left: 30px;
+    position: relative;
+}
+.feature .carusel{
+    width: 800px;
+    margin: auto;    
+    padding: 30px 0;
+    padding-right: 40px;
+    margin-left: 30px;
+}
+.feature .carusel li{
+    margin-left: 40px;        
+    box-shadow: 0px 0px 40px rgba(255,255,255,0.7);
+    border-radius: 15px;
+    height: 305px;
+}
+.feature .carusel img{
+    width: 230px;
+    height: 305px;
+}
+.feature .prev, .feature .next{
+    display: block;
+    cursor: pointer;
+    width: 26px;
+    height: 38px;
+    border: none;
+    background: url('../images/feature/arrows.png') no-repeat 0px 0px;
+    position: absolute;
+    top: 45%;
+    left: 0;    
+}
+.feature .prev:hover{
+    background-position: 0 -38px;    
+}
+.feature .prev{
+    margin-left: -20px;
+}
+.feature .next{
+    left: 100%;
+    background-position: -26px 0px;     
+    margin-left: 50px;
+}
+.feature .next:hover{
+    background-position: -26px -38px;    
+}
+.reviews{
+    margin-top: 50px;
+}
+.reviews div{
+    background: url(../images/elips.png) no-repeat bottom;
+    padding-bottom: 20px;
+    margin: 50px auto;
+    width: 800px;
+}
+.reviews img.person{
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 110px;
+}
+.button{
+    padding: 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    background: #c72d2d;
+    background: -webkit-linear-gradient(90deg, #a41c1c, #ed3e3e);
+    background: linear-gradient(to bottom, #ed3e3e, #a41c1c);
+    -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    border: 1px solid #f5d1d1;
+    border-bottom: none;
+    cursor: pointer;
+    font-weight: 400;
+}
+.button b{
+    color: floralwhite;
+}
+.button:hover{
+    background: #c72d2d;
+}
+#share42{
+    z-index: 499!important;
+}
+.ymaps-b-form-input{
+    width: 250px!important;
+}
+#countbox-days-text, #countbox-hours-text, #countbox-mins-text, #countbox-secs-text{
+    background-color: white;
+    background-repeat: none;
+    background-position: 50% 1px!important;
+}
+b span{
+    font-weight: bolder;
+    color: black;
+}

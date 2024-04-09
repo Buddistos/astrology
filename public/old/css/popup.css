@@ -1,0 +1,81 @@
+.popup_modal{
+	display: none; width: 400px; background: #fff; 
+    border: 4px solid rgba(0,0,0,0.5); border-radius: 10px;
+	position: relative;
+}
+.popup_modal .close{
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	font: 14px sans-serif; 
+	background: rgba(0, 0, 0, 0.5);
+	display: block;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	line-height: 15px;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.popup_modal.more_modal{
+    width: 606px;
+    padding: 20px 20px 20px 20px;
+    font: 18px PFDinTextCondPro;
+    line-height: 26px;
+    position: relative;
+    background: url('../images/action/goroback.png');
+}
+.popup_modal.more_modal .modal_head{
+    position: relative;
+    float: left;
+    margin-right: 20px;
+}
+.popup_modal.more_modal h4{
+   margin-top: 10px;
+   text-align: center;
+   font-size: 28px;
+   font-weight: 500;
+   padding: 10px;
+   border: 2px solid gray;
+   border-radius: 10px;
+}
+.popup_modal.more_modal img{
+    border: 2px solid gray;
+    border-radius: 5px;
+    width: 200px;
+    background: white;
+}
+.popup_modal.more_modal .more_img_container{
+    position: absolute;
+    bottom: 70px;
+}
+.popup_modal.more_modal img.more_img{
+    float: left;
+    margin: 10px 26px 0 0;
+    border: 5px solid #EAB000;
+    border-radius: 5px;
+}
+.popup_modal.more_modal img.more_img:hover{
+    border: 5px solid #FFDD00;
+}
+.popup_modal.more_modal ul{
+    list-style-type: circle;
+    margin-left: 310px;
+}
+.popup_modal.more_modal h1{
+    font-weight: 500;
+    font-size: 21px;
+    margin-bottom:  10px;
+}
+.popup_modal.more_modal .go_buy{
+    text-align: center;
+    bottom: 10px;
+    right: 10px;
+}
+#cro_1_modal, #cro_2_modal, #skat_3_modal, #snake_1_modal{
+    height: 500px;
+}
+#cro_3_modal{
+    height: 550px;
+}
