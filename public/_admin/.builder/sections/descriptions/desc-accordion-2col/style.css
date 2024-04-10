@@ -1,0 +1,13 @@
+#desc-accordion-2col {
+	background: #222222;
+}
+
+#desc-accordion-2col .bg {
+	background-image: url('./sections/descriptions/desc-accordion-2col/images/bg-nature-5.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.1;
+}

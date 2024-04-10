@@ -1,0 +1,11 @@
+#desc-halfbg-text-btn-2 {
+    background: #f8f9fb;
+}
+
+#desc-halfbg-text-btn-2 .half-container-left {
+    background-image: url('./sections/descriptions/desc-halfbg-text-btn-2/images/browser-windows.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    opacity: 1;
+}

@@ -1,0 +1,7 @@
+#gallery-carousel-single .bg {
+    background-image: url('./sections/galleries/gallery-carousel-single/images/bg-scene-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity:1;
+}

@@ -1,0 +1,10 @@
+#action-center-text-btn {
+    background: #e9fbff;
+}
+
+#action-center-text-btn .bg {
+    background-image: url('./sections/actions/action-center-text-btn/images/bg-13.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+}

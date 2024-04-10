@@ -1,0 +1,12 @@
+#nav-logo-menu-drop {
+    background: transparent;
+}
+
+#nav-logo-menu-drop .nav-bg {
+    background: linear-gradient(135deg, #444444, #222222);
+    background: -webkit-linear-gradient(315deg, #444444, #222222);
+}
+
+#nav-logo-menu-drop .dropdown-menu, #nav-logo-menu-drop .sub-menu, #nav-logo-menu-drop .mega-menu-container {
+    background: #222222;
+}

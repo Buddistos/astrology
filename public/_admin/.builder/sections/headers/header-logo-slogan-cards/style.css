@@ -1,0 +1,13 @@
+#header-logo-slogan-cards {
+    background: linear-gradient(135deg, #8253eb, #ffc857);
+}
+
+#header-logo-slogan-cards .bg {
+    background-image: url('./sections/headers/header-logo-slogan-cards/images/bg-devices-1.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.15;
+}

@@ -1,0 +1,9 @@
+#counter-timer-img .bg {
+    background-image: url('./sections/counters/counter-timer-img/images/bg-city-2.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.05;
+}

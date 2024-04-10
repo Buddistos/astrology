@@ -1,0 +1,11 @@
+#gallery-full-list-4col-quartbg {
+    background: #eeeeee;
+}
+
+#gallery-full-list-4col-quartbg .quarter-container-right {
+    background-image: url('./sections/galleries/gallery-full-list-4col-quartbg/images/bg-wood-6.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+}

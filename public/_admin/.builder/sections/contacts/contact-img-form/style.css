@@ -1,0 +1,12 @@
+#contact-img-form {
+    background: radial-gradient(circle, #653E23 30%, #4E2D18 70%);
+    background: -webkit-radial-gradient(circle, #653E23 30%, #4E2D18 70%);
+}
+
+#contact-img-form .bg {
+    background-image: url('./sections/contacts/contact-img-form/images/bg-25.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2;
+}

@@ -1,0 +1,19 @@
+#desc-quartbg-text-btn {
+    background: linear-gradient(135deg, #ff9300, #ff2c76);
+    background: -webkit-linear-gradient(315deg, #ff9300, #ff2c76);
+}
+
+#desc-quartbg-text-btn .bg {
+    background-image: url('./sections/descriptions/desc-quartbg-text-btn/images/bg-abstract-1.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    opacity: 0.03;
+}
+#desc-quartbg-text-btn .quarter-container-left {
+    background-image: url('./sections/descriptions/desc-quartbg-text-btn/images/bg-city-4.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity:1;
+}

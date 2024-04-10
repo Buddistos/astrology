@@ -1,0 +1,11 @@
+#header-slogan-modal {
+    background: #222222;
+}
+
+#header-slogan-modal .bg {
+    background-image: url('./sections/headers/header-slogan-modal/images/bg-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.6;
+}

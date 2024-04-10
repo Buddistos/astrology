@@ -1,0 +1,9 @@
+#chart-vert-single-3 .bg { 
+    background-image: url('./sections/charts/chart-vert-single-3/images/bg-modal-success.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.25;
+}

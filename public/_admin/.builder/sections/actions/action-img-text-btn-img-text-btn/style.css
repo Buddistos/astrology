@@ -1,0 +1,14 @@
+#action-img-text-btn-img-text-btn {
+    background: linear-gradient(to right, #21adff, #6959c3);
+    background: -webkit-linear-gradient(left, #21adff, #6959c3);
+}
+
+#action-img-text-btn-img-text-btn .bg {
+    background-image: url('./sections/actions/action-img-text-btn-img-text-btn/images/bg-pattern-1.png');
+	background-size: 300px auto;
+	-webkit-background-size: 300px auto;
+	background-repeat: repeat;
+	-webkit-background-repeat: repeat;
+	background-position: center center;
+	opacity: 0.07;
+}

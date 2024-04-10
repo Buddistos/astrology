@@ -1,0 +1,11 @@
+#desc-text-list-quartbg {
+    background: #222222;
+}
+
+#desc-text-list-quartbg .quarter-container-right {
+    background-image: url('./sections/descriptions/desc-text-list-quartbg/images/screen-45.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity:1;
+}

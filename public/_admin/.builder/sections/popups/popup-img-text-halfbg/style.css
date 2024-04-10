@@ -1,0 +1,22 @@
+#popup-img-text-halfbg .modal-content {
+	background: #222222;
+}
+
+#popup-img-text-halfbg .bg {
+	background-image: url('./sections/popups/popup-img-text-halfbg/images/bg-28.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.5;
+}
+#popup-img-text-halfbg .half-container-right {
+	background-image: url('./sections/popups/popup-img-text-halfbg/images/bg-laptop-2.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 1;
+}

@@ -1,0 +1,7 @@
+#header-center-logo-slogan .bg {
+    background-image: url('./sections/headers/header-center-logo-slogan/images/bg-12.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity:0.075;
+}

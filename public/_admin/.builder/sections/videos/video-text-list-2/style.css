@@ -1,0 +1,7 @@
+#video-text-list-2 .bg {
+    background-image: url('./sections/videos/video-text-list-2/images/bg-blur-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    opacity: 0.2;
+}

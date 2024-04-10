@@ -1,0 +1,11 @@
+#header-center-slogan {
+    background: #0069ff;
+}
+
+#header-center-slogan .bg {
+    background-image: url('./sections/headers/header-center-slogan/images/bg-laptop-2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity:0.08;
+}

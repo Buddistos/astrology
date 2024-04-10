@@ -1,0 +1,11 @@
+#header-form-slogan-2 {
+    background: #4f3f38;
+}
+
+#header-form-slogan-2 .bg {
+    background-image: url('./sections/headers/header-form-slogan-2/images/bg-work-2.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    opacity: 0.1;
+}

@@ -1,0 +1,9 @@
+#desc-img-slogan-text-list .bg {
+    background-image: url('./sections/descriptions/desc-img-slogan-text-list/images/bg-pattern-5.png');
+	background-size: 80px auto;
+	-webkit-background-size: 80px auto;
+	background-repeat: repeat-x;
+	-webkit-background-repeat: repeat-x;
+	background-position: center center;
+	opacity: 0.3;
+}

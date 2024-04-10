@@ -1,0 +1,11 @@
+#desc-halfbg-text {
+    background: #f8f9fb;
+}
+
+#desc-halfbg-text .half-container-left {
+    background-image: url('./sections/descriptions/desc-halfbg-text/images/bg-4.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    opacity:1;
+}

@@ -1,0 +1,14 @@
+#action-img-text-btn-3 {
+    background: radial-gradient(circle, #ff7a00 30%, #e12e2e 70%);
+    background: -webkit-radial-gradient(circle, #ff7a00 30%, #e12e2e 70%);
+}
+
+#action-img-text-btn-3 .bg { 
+    background-image: url('./sections/actions/action-img-text-btn-3/images/bg-blur-3.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.15;
+}

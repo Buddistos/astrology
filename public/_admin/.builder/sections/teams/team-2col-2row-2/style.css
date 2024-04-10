@@ -1,0 +1,13 @@
+#team-2col-2row-2 {
+    background: #413c59;
+}
+
+#team-2col-2row-2 .bg {
+	background-image: url('./sections/teams/team-2col-2row-2/images/bg-laptop-2.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.05;
+}

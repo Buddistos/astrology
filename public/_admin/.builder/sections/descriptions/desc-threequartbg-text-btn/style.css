@@ -1,0 +1,11 @@
+#desc-threequartbg-text-btn {
+    background: #222222;
+}
+
+#desc-threequartbg-text-btn .threequarter-container-left {
+    background-image: url('./sections/descriptions/desc-threequartbg-text-btn/images/screen-44.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity:1;
+}

@@ -1,0 +1,14 @@
+#benefit-center-text-img-text-2 {
+    background: linear-gradient(to bottom, #000000, #111111);
+    background: -webkit-linear-gradient(top, #000000, #111111);
+}
+
+#benefit-center-text-img-text-2 .bg {
+    background-image: url('./sections/benefits/benefit-center-text-img-text-2/images/abstract-bg-5.png');
+    background-size: 582px auto;
+    -webkit-background-size: 582px auto;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: center left;
+    opacity: 1;
+}

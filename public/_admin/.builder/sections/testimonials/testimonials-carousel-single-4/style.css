@@ -1,0 +1,11 @@
+#testimonials-carousel-single-4 .bg {
+    background-image: url('./sections/testimonials/testimonials-carousel-single-4/images/bg-5.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.05;
+}
+
+span.icons-row [class^=icon-star] {
+    color: #ffd800;
+}

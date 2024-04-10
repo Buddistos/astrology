@@ -1,0 +1,11 @@
+#video-center-icon {
+    background: #2b356f;
+}
+
+#video-center-icon .bg {
+    background-image: url('./sections/videos/video-center-icon/images/bg-2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+}

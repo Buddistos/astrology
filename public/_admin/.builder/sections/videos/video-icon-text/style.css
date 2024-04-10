@@ -1,0 +1,7 @@
+#video-icon-text .bg {
+    background-image: url('./sections/videos/video-icon-text/images/bg-11.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity:0.15;
+}

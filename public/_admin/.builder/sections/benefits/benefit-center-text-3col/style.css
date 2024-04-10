@@ -1,0 +1,9 @@
+#benefit-center-text-3col .bg {
+    background-image: url('./sections/benefits/benefit-center-text-3col/images/abstract-bg-2.png');
+    background-size: 281px auto;
+    -webkit-background-size: 281px auto;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: center left;
+    opacity: 1;
+}

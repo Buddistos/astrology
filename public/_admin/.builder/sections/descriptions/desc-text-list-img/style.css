@@ -1,0 +1,7 @@
+#desc-text-list-img .bg {
+    background-image: url('./sections/descriptions/desc-text-list-img/images/bg-work-2.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    opacity: 0.04;
+}

@@ -1,0 +1,13 @@
+#header-img-slogan-btn-img {
+	background: #0079d6;
+}
+
+#header-img-slogan-btn-img .bg { 
+    background-image: url('./sections/headers/header-img-slogan-btn-img/images/bg-work-2.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: bottom center;
+	opacity: 0.08;
+}

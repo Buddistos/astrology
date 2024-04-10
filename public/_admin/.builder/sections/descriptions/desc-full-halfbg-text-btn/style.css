@@ -1,0 +1,11 @@
+#desc-full-halfbg-text-btn {
+    background: #f1edea;
+}
+
+#desc-full-halfbg-text-btn .half-container-left {
+    background-image: url('./sections/descriptions/desc-full-halfbg-text-btn/images/screen-48.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+}

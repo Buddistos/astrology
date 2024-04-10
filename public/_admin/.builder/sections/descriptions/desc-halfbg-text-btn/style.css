@@ -1,0 +1,7 @@
+#desc-halfbg-text-btn .half-container-left {
+    background-image: url('./sections/descriptions/desc-halfbg-text-btn/images/bg-9.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    opacity:1;
+}

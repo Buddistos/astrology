@@ -1,0 +1,7 @@
+#counter-halfbg-timer .half-container-left {
+    background-image: url('./sections/counters/counter-halfbg-timer/images/bg-blur-2.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity:1;
+}

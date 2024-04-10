@@ -1,0 +1,12 @@
+#header-slogan-form-2 {
+    background: linear-gradient(135deg, #ff9300, #ff2c76);
+    background: -webkit-linear-gradient(315deg, #ff9300, #ff2c76);
+}
+
+#header-slogan-form-2 .bg {
+    background-image: url('./sections/headers/header-slogan-form-2/images/bg-city-5.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    opacity: 0.15;
+}

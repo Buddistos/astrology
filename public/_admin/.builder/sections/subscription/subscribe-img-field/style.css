@@ -1,0 +1,7 @@
+#subscribe-img-field .bg {
+    background-image: url('./sections/subscription/subscribe-img-field/images/bg-nature-2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity:0.5;
+}

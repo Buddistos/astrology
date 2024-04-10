@@ -1,0 +1,7 @@
+#popup-form-halfbg .half-container-right {
+	background-image: url('./sections/popups/popup-form-halfbg/images/bg-modal-success.jpg');
+	background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+}

@@ -1,0 +1,9 @@
+#clients-carousel-2 .bg {
+    background-image: url('./sections/clients/clients-carousel-2/images/bg-city-1.jpg');
+    background-size: auto;
+    -webkit-background-size: auto;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.05;
+}

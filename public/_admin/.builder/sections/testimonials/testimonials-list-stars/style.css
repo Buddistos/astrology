@@ -1,0 +1,18 @@
+span.icons-row [class^=icon-star] {
+    color: #ffd800;
+}
+
+#testimonials-list-stars {
+    background: linear-gradient(to bottom, #ffffff, #f0f6f7);
+    background: -webkit-linear-gradient(top, #ffffff, #f0f6f7);
+}
+
+#testimonials-list-stars .bg {
+    background-image: url('./sections/testimonials/testimonials-list-stars/images/bg-27.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: bottom center;
+    opacity: 1;
+}

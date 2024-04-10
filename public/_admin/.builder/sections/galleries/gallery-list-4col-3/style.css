@@ -1,0 +1,9 @@
+#gallery-list-4col-3 .bg {
+    background-image: url('./sections/galleries/gallery-list-4col-3/images/bg-wall-1.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.1;
+}

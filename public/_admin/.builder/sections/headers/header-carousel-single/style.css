@@ -1,0 +1,12 @@
+#header-carousel-single {
+    background: linear-gradient(135deg, #000000, #00c0ff);
+    background: -webkit-linear-gradient(315deg, #000000, #00c0ff);
+}
+
+#header-carousel-single .bg {
+    background-image: url('./sections/headers/header-carousel-single/images/bg-wood-5.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.25;
+}

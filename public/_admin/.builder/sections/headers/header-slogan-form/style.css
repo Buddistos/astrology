@@ -1,0 +1,12 @@
+#header-slogan-form {
+    background: linear-gradient(to bottom, #887ab9, #72c9ff);
+    background: -webkit-linear-gradient(top, #887ab9, #72c9ff);
+}
+
+#header-slogan-form .bg {
+    background-image: url('./sections/headers/header-slogan-form/images/bg-laptop-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    opacity: 0.1;
+}

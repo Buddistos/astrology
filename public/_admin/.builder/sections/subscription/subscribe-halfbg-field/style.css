@@ -1,0 +1,11 @@
+#subscribe-halfbg-field {
+    background: #27C8FF;
+}
+
+#subscribe-halfbg-field .half-container-left {
+    background-image: url('./sections/subscription/subscribe-halfbg-field/images/bg-21.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    opacity: 1;
+}

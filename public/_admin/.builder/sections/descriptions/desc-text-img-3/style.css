@@ -1,0 +1,13 @@
+#desc-text-img-3 {
+    background: #000000;
+}
+
+#desc-text-img-3 .bg {
+    background-image: url('./sections/descriptions/desc-text-img-3/images/bg-29.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: top center;
+    opacity: 1;
+}

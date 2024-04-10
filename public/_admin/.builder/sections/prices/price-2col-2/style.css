@@ -1,0 +1,9 @@
+#price-2col-2 .bg {
+	background-image: url('./sections/prices/price-2col-2/images/bg-blur-1.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.25;
+}

@@ -1,0 +1,10 @@
+#action-text-btn-2 {
+    background: #0069ff;
+}
+
+#action-text-btn-2 .bg {
+    background-image: url('./sections/actions/action-text-btn-2/images/bg-13.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+}

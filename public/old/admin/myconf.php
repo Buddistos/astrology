@@ -12,9 +12,9 @@
 
     $hostname = "localhost";
     
-    $dbname = "bestho_goro";
-    $username = "bestho_admin";
-    $password = "kexibqUjhjcrjg2014";
+    $dbname = "astro";
+    $username = "root";
+    $password = "123";
 
 /*
     $dbname = "u35810_goro";

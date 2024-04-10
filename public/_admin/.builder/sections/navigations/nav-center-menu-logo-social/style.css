@@ -1,0 +1,11 @@
+#nav-center-menu-logo-social {
+    background: transparent;
+}
+
+#nav-center-menu-logo-social .nav-bg {
+    background: #0069ff;
+}
+
+#nav-center-menu-logo-social .dropdown-menu, #nav-center-menu-logo-social .sub-menu, #nav-center-menu-logo-social .mega-menu-container {
+    background: #0069ff;
+}

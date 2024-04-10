@@ -1,0 +1,11 @@
+#header-slogan-text-btn {
+    background: #222222;
+}
+
+#header-slogan-text-btn .bg {
+    background-image: url('./sections/headers/header-slogan-text-btn/images/bg-15.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.15;
+}

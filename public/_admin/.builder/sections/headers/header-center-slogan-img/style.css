@@ -1,0 +1,11 @@
+#header-center-slogan-img {
+    background: #2b356f;
+}
+
+#header-center-slogan-img .bg {
+    background-image: url('./sections/headers/header-center-slogan-img/images/bg-3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity:0.65;
+}

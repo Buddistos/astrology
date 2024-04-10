@@ -1,0 +1,11 @@
+#action-center-text-btn-3 {
+    background: #222222;
+}
+
+#action-center-text-btn-3 .bg {
+    background-image: url('./sections/actions/action-center-text-btn-3/images/bg-blur-3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.1;
+}

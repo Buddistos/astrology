@@ -1,0 +1,17 @@
+span.icons-row [class^=icon-star] {
+    color: #ffd800;
+}
+
+#testimonials-list {
+    background: #000000;
+}
+
+#testimonials-list .bg {
+    background-image: url('./sections/testimonials/testimonials-list/images/bg-30.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: bottom center;
+    opacity: 1;
+}

@@ -1,0 +1,7 @@
+#popup-halfbg-icon-text .half-container-left {
+	background-image: url('./sections/popups/popup-halfbg-icon-text/images/bg-laptop-1.jpg');
+	background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+}

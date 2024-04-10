@@ -1,0 +1,9 @@
+#counter-text-2col .bg {
+    background-image: url('./sections/counters/counter-text-2col/images/bg-nature-3.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.15;
+}

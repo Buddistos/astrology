@@ -1,0 +1,8 @@
+#nav-fluid-center-logo-menu-btn {
+    background: transparent;
+}
+
+#nav-fluid-center-logo-menu-btn .nav-bg {
+    background: linear-gradient(135deg, #00c0ff, #00e9ff);
+    background: -webkit-linear-gradient(315deg, #00c0ff, #00e9ff);
+}

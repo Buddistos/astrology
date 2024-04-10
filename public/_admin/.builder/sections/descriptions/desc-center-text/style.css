@@ -1,0 +1,12 @@
+#desc-center-text {
+    background: radial-gradient(circle, #653E23 30%, #4E2D18 70%);
+    background: -webkit-radial-gradient(circle, #653E23 30%, #4E2D18 70%);
+}
+
+#desc-center-text .bg {
+    background-image: url('./sections/descriptions/desc-center-text/images/bg-24.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.05;
+}

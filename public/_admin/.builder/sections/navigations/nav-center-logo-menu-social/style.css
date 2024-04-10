@@ -1,0 +1,8 @@
+#nav-center-logo-menu-social {
+    background: transparent;
+}
+
+#nav-center-logo-menu-social .nav-bg {
+    background: linear-gradient(135deg, #111111, #000000);
+    background: -webkit-linear-gradient(315deg, #111111, #000000);
+}

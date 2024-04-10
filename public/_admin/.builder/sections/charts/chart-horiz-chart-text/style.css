@@ -1,0 +1,13 @@
+#chart-horiz-chart-text {
+    background: linear-gradient(135deg, #00c0ff, #005eff);
+}
+
+#chart-horiz-chart-text .bg {
+    background-image: url('./sections/charts/chart-horiz-chart-text/images/bg-pattern-1.png');
+    background-size: 300px auto;
+    -webkit-background-size: 300px auto;
+    background-repeat: repeat;
+    -webkit-background-repeat: repeat;
+    background-position: center center;
+    opacity: 0.1;
+}

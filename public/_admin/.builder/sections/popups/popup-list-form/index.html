@@ -1,0 +1,38 @@
+<section class="modal fade modal-confirm flex-center" id="popup-list-form" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="mb-30">Напишите нам</h2>
+                        <p class="mb-30">В нашей работе мы стараемся использовать только самые современные, удобные и интересные решения. Мы хотим, чтобы создаваемая вами страница выглядела уникальной и новой настолько долго, насколько это возможно..</p>
+                        <ul class="text-icon-list">
+                            <li><i class="icon-map2 icon-size-m"></i><span class="spr-option-textedit">Наш адрес</span></li>
+                            <li><i class="icon-at-sign icon-size-m"></i><span class="spr-option-textedit">Наш Email</span></li>
+                            <li><i class="icon-phone-incoming icon-size-m"></i><span class="spr-option-textedit">Наш телефон</span></li>
+                            <li><i class="icon-clock icon-size-m"></i><span class="spr-option-textedit">Часы работы</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <form action="./scripts/request.php" class="contact_form mb-0">
+                            <div class="form-group">
+                                <input type="text" class="spr-text-field form-control" placeholder="Ваши ФИО" name="NAME">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="spr-email-field form-control" placeholder="Ваш Email" name="EMAIL">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="spr-textarea form-control" rows="6" placeholder="Ваше сообщение или вопрос" name="MESSAGE"></textarea>
+                            </div>
+                            <button type="submit" data-loading-text="&bull;&bull;&bull;" data-complete-text="Завершено!" data-reset-text="Попробуйте чуть позже..." class="btn btn-success btn-block"><i class="icon-paper-plane icon-position-left icon-size-m"></i><span class="spr-option-textedit-link">Отправить сообщение</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="bg"></div>
+        </div>
+    </div>
+</section>

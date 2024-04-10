@@ -1,0 +1,11 @@
+#footer-list-banner {
+    background: #222222;
+}
+
+#footer-list-banner .bg {
+    background-image: url('./sections/footers/footer-list-banner/images/bg-15.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.05;
+}

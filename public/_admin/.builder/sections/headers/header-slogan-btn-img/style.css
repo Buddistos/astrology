@@ -1,0 +1,14 @@
+#header-slogan-btn-img {
+	background: linear-gradient(135deg, #FF5C5C, #42C2EA);
+    background: -webkit-linear-gradient(315deg, #FF5C5C, #42C2EA);
+}
+
+#header-slogan-btn-img .bg {
+	background-image: url('./sections/headers/header-slogan-btn-img/images/abstract-bg-1.png');
+	background-size: 100% auto;
+	-webkit-background-size: 100% auto;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: bottom center;
+	opacity: 1;
+}

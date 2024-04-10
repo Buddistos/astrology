@@ -1,0 +1,13 @@
+#benefit-3col-2row-2 {
+    background: #7977FF;
+}
+
+#benefit-3col-2row-2 .bg {
+    background-image: url('./sections/benefits/benefit-3col-2row-2/images/paint-line-bg.png');
+    background-size: 1044px auto;
+    -webkit-background-size: 1044px auto;
+    background-repeat: repeat-x;
+    -webkit-background-repeat: repeat-x;
+    background-position: bottom center;
+    opacity: 1;
+}

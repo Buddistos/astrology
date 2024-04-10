@@ -1,0 +1,11 @@
+#testimonials-carousel-single-5 {
+    background: #222222;
+}
+
+#testimonials-carousel-single-5 .bg {
+    background-image: url('./sections/testimonials/testimonials-carousel-single-5/images/bg-laptop-3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.40;
+}

@@ -1,0 +1,13 @@
+#footer-list-text {
+    background: #444444;
+}
+
+#footer-list-text .bg {
+	background-image: url('./sections/footers/footer-list-text/images/bg-28.jpg');
+	background-size: auto;
+	-webkit-background-size: auto;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.25;
+}

@@ -1,0 +1,12 @@
+#action-img-text-btn {
+    background: linear-gradient(135deg, #C8F1FF, #FFFFEA);
+    background: -webkit-linear-gradient(315deg, #C8F1FF, #FFFFEA);
+}
+
+#action-img-text-btn .bg{
+    background-image: url('./sections/actions/action-img-text-btn/images/bg-26.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.1;
+}

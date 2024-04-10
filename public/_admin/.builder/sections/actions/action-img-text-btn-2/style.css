@@ -1,0 +1,10 @@
+#action-img-text-btn-2 {
+    background: #4eb2ff;
+}
+
+#action-img-text-btn-2 .bg {
+    background-image: url('./sections/actions/action-img-text-btn-2/images/bg-wall-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.15;
+}

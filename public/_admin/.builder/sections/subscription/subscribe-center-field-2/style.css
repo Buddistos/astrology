@@ -1,0 +1,12 @@
+#subscribe-center-field-2 {
+	background: linear-gradient(135deg, #FFF0F0, #ECFDFF);
+    background: -webkit-linear-gradient(315deg, #FFF0F0, #ECFDFF);
+}
+
+#subscribe-center-field-2 .bg {
+    background-image: url('./sections/subscription/subscribe-center-field-2/images/bg-22.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity:0.10;
+}

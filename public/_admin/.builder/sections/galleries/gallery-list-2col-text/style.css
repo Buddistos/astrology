@@ -1,0 +1,9 @@
+#gallery-list-2col-text .bg {
+    background-image: url('./sections/galleries/gallery-list-2col-text/images/bg-pattern-1.png');
+    background-size: 300px 300px;
+    -webkit-background-size: 300px 300px;
+    background-repeat: repeat;
+    -webkit-background-repeat: repeat;
+    background-position: center center;
+    opacity: 0.15;
+}

@@ -1,0 +1,9 @@
+#desc-text-2col-img .bg {
+	background-image: url('./sections/descriptions/desc-text-2col-img/images/bg-17.png');
+	background-size: 650px auto;
+	-webkit-background-size: 650px auto;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center right;
+	opacity: 0.75;
+}

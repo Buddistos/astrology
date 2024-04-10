@@ -1,0 +1,12 @@
+#popup-center-img-text-img-text .modal-content {
+	background: linear-gradient(135deg, #00c0ff, #4d569e);
+}
+#popup-center-img-text-img-text .bg {
+	background-image: url('./sections/popups/popup-center-img-text-img-text/images/bg-blur-5.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.05;
+}

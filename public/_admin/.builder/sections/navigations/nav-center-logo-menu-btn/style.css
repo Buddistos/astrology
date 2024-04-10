@@ -1,0 +1,8 @@
+#nav-center-logo-menu-btn {
+    background: transparent;
+}
+
+#nav-center-logo-menu-btn .nav-bg {
+    background: linear-gradient(135deg, #FF5C5C, #42C2EA);
+    background: -webkit-linear-gradient(315deg, #FF5C5C, #42C2EA);
+}

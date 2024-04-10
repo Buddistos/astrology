@@ -1,0 +1,12 @@
+#header-center-slogan-form-3 {
+    background: linear-gradient(135deg, #e1fcff, #ffffff);
+    background: -webkit-linear-gradient(315deg, #e1fcff, #ffffff);
+}
+
+#header-center-slogan-form-3 .bg {
+    background-image: url('./sections/headers/header-center-slogan-form-3/images/bg-room-1.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    opacity: 0.25;
+}

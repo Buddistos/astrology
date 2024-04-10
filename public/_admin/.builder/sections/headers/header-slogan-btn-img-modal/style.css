@@ -1,0 +1,14 @@
+#header-slogan-btn-img-modal {
+    background: linear-gradient(135deg, #7977FF, #BE5EFF);
+    background: -webkit-linear-gradient(315deg, #7977FF, #BE5EFF);
+}
+
+#header-slogan-btn-img-modal .bg {
+    background-image: url('./sections/headers/header-slogan-btn-img-modal/images/paint-line-bg.png');
+    background-size: 1044px auto;
+    -webkit-background-size: 1044px auto;
+    background-repeat: repeat-x;
+    -webkit-background-repeat: repeat-x;
+    background-position: bottom center;
+    opacity: 1;
+}

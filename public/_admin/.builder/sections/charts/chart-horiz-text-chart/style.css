@@ -1,0 +1,13 @@
+#chart-horiz-text-chart {
+    background: #111111;
+}
+
+#chart-horiz-text-chart .bg { 
+    background-image: url('./sections/charts/chart-horiz-text-chart/images/bg-scene-3.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.2;
+}

@@ -1,0 +1,68 @@
+li [class*=" icon-"], li [class^=icon-]{
+    top: 0!important;
+}
+
+#topfixed ul.checking{
+}
+#topfixed ul.checking li{
+    float: left;
+    color: white;
+}
+#topfixed ul.checking li i{
+    line-height: 22px;
+    font-size: 18px;
+}
+#topfixed ul.checking li.title{
+    padding: 15px 5px 13px 15px;
+}
+#topfixed ul.checking li.item-check, #topfixed ul.checking li.undo, #topfixed ul.checking li.redo{
+    padding: 15px 10px 10px;
+}
+#topfixed ul.checking li.nav-settings {
+    padding: 15px 16px 10px;
+}
+#topfixed ul.checking li.active{
+    background-color: #364150;
+}
+#topfixed ul.checking li.section-edit.active{
+    background-color: #36c6d3;
+}
+
+#topfixed .checking li:not(.title){
+    cursor: pointer;
+}
+#topfixed .checking li:not(.title):hover{
+    background-color: #55667e;
+}
+
+aside.control-panel{
+    margin-top: 50px;
+}
+
+.thin aside.control-panel{
+    display: none;
+}
+
+.run aside.control-panel {
+    left: auto;
+    margin-left: -20px;
+}
+
+aside.add-sections-items{
+    left: auto;
+    margin-left: 200px;
+    margin-top: 50px;
+}
+
+aside.add-sections-items > ul li .add-section{
+    width: auto;
+    position: absolute;
+}
+
+aside.add-sections-items{
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+}

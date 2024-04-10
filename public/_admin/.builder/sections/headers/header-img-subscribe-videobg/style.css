@@ -1,0 +1,8 @@
+#header-img-subscribe-videobg {
+    background: linear-gradient(135deg, #C8F1FF, #FFFFEA);
+    background: -webkit-linear-gradient(315deg, #C8F1FF, #FFFFEA);
+}
+
+#header-img-subscribe-videobg .bg {
+    opacity: 0.2;
+}

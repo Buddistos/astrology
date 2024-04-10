@@ -1,0 +1,13 @@
+
+#nav-logo-2row-drop .dropdown-menu, #nav-logo-2row-drop .sub-menu, #nav-logo-2row-drop .mega-menu-container {
+	background: #494bad;
+}
+
+.nav-bg-color {
+	background: linear-gradient(135deg, #00c0ff, #494bad);
+}
+
+#nav-logo-2row-drop .nav-bg {
+	background: linear-gradient(135deg, #00c0ff, #494bad);
+	opacity: 1;
+}

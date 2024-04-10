@@ -1,0 +1,13 @@
+#popup-center-countdown .modal-content {
+    background: radial-gradient(circle, #ffffff 30%, #eeeeee 70%);
+}
+
+#popup-center-countdown .bg {
+    background-image: url('./sections/popups/popup-center-countdown/images/bg-wall-1.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.1;
+}

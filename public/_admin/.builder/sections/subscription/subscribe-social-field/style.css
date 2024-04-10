@@ -1,0 +1,12 @@
+#subscribe-social-field {
+    background: linear-gradient(to bottom, #FBF7EF, #F2F7FF);
+    background: -webkit-linear-gradient(top, #FBF7EF, #F2F7FF);
+}
+
+#subscribe-social-field .bg {
+    background-image: url('./sections/subscription/subscribe-social-field/images/bg-20.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.25;
+}

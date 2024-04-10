@@ -1,0 +1,9 @@
+#desc-img-text-4col-3 .bg {
+    background-image: url('./sections/descriptions/desc-img-text-4col-3/images/bg-pattern-4.png');
+	background-size: 50px 50px;
+	-webkit-background-size: 50px 50px;
+	background-repeat: repeat-y;
+	-webkit-background-repeat: repeat-y;
+	background-position: top right;
+	opacity: 1;
+}

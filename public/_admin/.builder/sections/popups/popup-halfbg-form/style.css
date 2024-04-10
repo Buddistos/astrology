@@ -1,0 +1,7 @@
+#popup-halfbg-form .half-container-left {
+	background-image: url('./sections/popups/popup-halfbg-form/images/bg-work-2.jpg');
+	background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+}

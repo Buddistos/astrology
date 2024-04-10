@@ -1,0 +1,11 @@
+#header-center-subscribe-img {
+    background: #e9fbff;
+}
+
+#header-center-subscribe-img .bg {
+    background-image: url('./sections/headers/header-center-subscribe-img/images/bg-12.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.1;
+}

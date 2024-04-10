@@ -1,0 +1,16 @@
+#header-slogan-halfbg {
+    background: #f8f9fb;
+}
+
+#header-slogan-halfbg .bg {
+    background-image: url('./sections/headers/header-slogan-halfbg/images/bg-pattern-1.png');
+    background-size: 300px auto;
+	background-repeat: repeat;
+	background-position: center center;
+	opacity: 0.05;
+}
+
+#header-slogan-halfbg .half-container-right {
+    background-image: url('./sections/headers/header-slogan-halfbg/images/mockup-apple-devices@2x.png');
+    background-size: cover;
+}

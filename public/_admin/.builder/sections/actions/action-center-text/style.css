@@ -1,0 +1,9 @@
+#action-center-text .bg {
+	background-image: url('./sections/actions/action-center-text/images/bg-wall-1.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.1;
+}

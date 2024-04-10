@@ -1,0 +1,11 @@
+#footer-list-logo {
+    background: #f8f9fb;
+}
+
+#footer-list-logo .bg {
+    background-image: url('./sections/footers/footer-list-logo/images/bg-6.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.3;
+}

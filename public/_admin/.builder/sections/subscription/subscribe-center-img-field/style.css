@@ -1,0 +1,11 @@
+#subscribe-center-img-field {
+    background: #000000;
+}
+
+#subscribe-center-img-field .bg {
+    background-image: url('./sections/subscription/subscribe-center-img-field/images/bg-nature-5.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity:0.4;
+}

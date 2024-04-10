@@ -1,0 +1,12 @@
+#header-center-slogan-img-2 {
+    background: radial-gradient(circle, #653E23 30%, #4E2D18 70%);
+    background: -webkit-radial-gradient(circle, #653E23 30%, #4E2D18 70%);
+}
+
+#header-center-slogan-img-2 .bg {
+    background-image: url('./sections/headers/header-center-slogan-img-2/images/bg-23.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.50;
+}

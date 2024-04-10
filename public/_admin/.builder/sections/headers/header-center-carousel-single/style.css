@@ -1,0 +1,12 @@
+#header-center-carousel-single {
+    background: linear-gradient(135deg, #ff2c76, #07bcf7);
+    background: -webkit-linear-gradient(315deg, #ff2c76, #07bcf7);
+}
+
+#header-center-carousel-single .bg {
+    background-image: url('./sections/headers/header-center-carousel-single/images/bg-sky-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+}

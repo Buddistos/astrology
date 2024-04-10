@@ -1,0 +1,12 @@
+#footer-text-logo-share {
+    background: radial-gradient(circle, #653E23 30%, #4E2D18 70%);
+    background: -webkit-radial-gradient(circle, #653E23 30%, #4E2D18 70%);
+}
+
+#footer-text-logo-share .bg{
+    background-image: url('./sections/footers/footer-text-logo-share/images/bg-23.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+}

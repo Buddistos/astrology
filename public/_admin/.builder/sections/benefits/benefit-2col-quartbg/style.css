@@ -1,0 +1,12 @@
+#benefit-2col-quartbg {
+    background: linear-gradient(135deg, #00c0ff, #2da3a2);
+    background: -webkit-linear-gradient(315deg, #00c0ff, #2da3a2);
+}
+
+#benefit-2col-quartbg .quarter-container-right {
+    background-image: url('./sections/benefits/benefit-2col-quartbg/images/bg-sea-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+}

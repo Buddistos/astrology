@@ -1,0 +1,9 @@
+#header-img-timer .bg {
+    background-image: url('./sections/headers/header-img-timer/images/bg-city-4.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.1;
+}

@@ -1,0 +1,14 @@
+#header-slogan-btn-2 {
+	background: linear-gradient(135deg, #6dd1f3, #8afaf8);
+    background: -webkit-linear-gradient(315deg, #6dd1f3, #8afaf8);
+}
+
+#header-slogan-btn-2 .bg {
+    background-image: url('./sections/headers/header-slogan-btn-2/images/bg-pattern-2.png');
+	background-size: auto 80px;
+	-webkit-background-size: auto 80px;
+	background-repeat: repeat-y;
+	-webkit-background-repeat: repeat-y;
+	background-position: center right;
+	opacity: 0.9;
+}

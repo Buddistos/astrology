@@ -1,0 +1,18 @@
+#nav-fluid-canvas-3 {
+    background: transparent;
+}
+
+.off-canvas-overlay {
+    background: linear-gradient(135deg, #7977FF, #BE5EFF);
+    background: -webkit-linear-gradient(315deg, #7977FF, #BE5EFF);
+}
+
+#navbar {
+    background: linear-gradient(135deg, #7977FF, #BE5EFF);
+    background: -webkit-linear-gradient(315deg, #7977FF, #BE5EFF);
+}
+
+#nav-fluid-canvas-3 .nav-bg {
+    background: linear-gradient(135deg, #7977FF, #BE5EFF);
+    background: -webkit-linear-gradient(315deg, #7977FF, #BE5EFF);
+}

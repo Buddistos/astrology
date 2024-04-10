@@ -1,0 +1,9 @@
+#popup-center-img-text .bg {
+	background-image: url('./sections/popups/popup-center-img-text/images/bg-sky-1.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.3;
+}

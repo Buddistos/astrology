@@ -1,0 +1,7 @@
+#benefit-quartbg-2col .quarter-container-left {
+    background-image: url('./sections/benefits/benefit-quartbg-2col/images/bg-nature-1.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    opacity:1;
+}

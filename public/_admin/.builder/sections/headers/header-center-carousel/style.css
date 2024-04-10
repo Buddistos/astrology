@@ -1,0 +1,13 @@
+#header-center-carousel {
+    background: radial-gradient(circle, #00e7f7 30%, #00B1FF 70%);
+    background: -webkit-radial-gradient(circle, #00e7f7 30%, #00B1FF 70%);
+}
+
+#header-center-carousel .bg {
+    background-image: url('./sections/headers/header-center-carousel/images/bg-corner.png');
+    background-size: 127px auto;
+    -webkit-background-size: 127px auto;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: right bottom;
+}

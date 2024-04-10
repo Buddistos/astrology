@@ -1,0 +1,14 @@
+#subscribe-center-field-3 {
+	background: linear-gradient(135deg, #7977FF, #BE5EFF);
+    background: -webkit-linear-gradient(315deg, #7977FF, #BE5EFF);
+}
+
+#subscribe-center-field-3 .bg {
+    background-image: url('./sections/subscription/subscribe-center-field-3/images/paint-line-bg.png');
+    background-size: 1044px auto;
+    -webkit-background-size: 1044px auto;
+    background-repeat: repeat-x;
+    -webkit-background-repeat: repeat-x;
+    background-position: bottom center;
+    opacity: 1;
+}

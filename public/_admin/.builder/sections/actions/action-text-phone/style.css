@@ -1,0 +1,13 @@
+#action-text-phone {
+    background: #f8f9fb;
+}
+
+#action-text-phone .bg {
+    background-image: url('./sections/actions/action-text-phone/images/bg-6.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.75;
+}

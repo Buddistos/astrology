@@ -1,0 +1,9 @@
+#gallery-list-3col-4 .bg {
+	background-image: url('./sections/galleries/gallery-list-3col-4/images/bg-nature-1.jpg');
+	background-size: auto;
+	-webkit-background-size: auto;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 1;
+}

@@ -1,0 +1,13 @@
+#action-right-text-btn {
+    background: #fcf9f5;
+}
+
+#action-right-text-btn .bg {
+    background-image: url('./sections/actions/action-right-text-btn/images/bg-pattern-3.png');
+    background-size: auto 80px;
+    -webkit-background-size: auto 80px;
+    background-repeat: repeat-y;
+    -webkit-background-repeat: repeat-y;
+    background-position: center left;
+    opacity: 0.9;
+}

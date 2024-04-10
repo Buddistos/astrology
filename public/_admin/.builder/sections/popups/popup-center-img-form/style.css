@@ -1,0 +1,9 @@
+#popup-center-img-form .bg {
+    background-image: url('./sections/popups/popup-center-img-form/images/bg-wood-3.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.75;
+}

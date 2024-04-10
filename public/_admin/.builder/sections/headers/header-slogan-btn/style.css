@@ -1,0 +1,10 @@
+#header-slogan-btn{
+    background: #2b356f;
+}
+#header-slogan-btn .bg {
+    background-image: url('./sections/headers/header-slogan-btn/images/bg-11.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity:0.1;
+}

@@ -1,0 +1,7 @@
+#header-slogan-border .bg {
+    background-image: url('./sections/headers/header-slogan-border/images/bg-31.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    opacity: 1;
+}

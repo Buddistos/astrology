@@ -1,0 +1,6 @@
+#action-text-btn-img .bg {
+    background-image: url('./sections/actions/action-text-btn-img/images/bg-10.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity:0.15;
+}

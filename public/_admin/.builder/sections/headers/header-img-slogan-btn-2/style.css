@@ -1,0 +1,14 @@
+#header-img-slogan-btn-2 {
+    background: linear-gradient(to bottom, #000000, #272443);
+    background: -webkit-linear-gradient(top, #000000, #272443);
+}
+
+#header-img-slogan-btn-2 .bg {
+    background-image: url('./sections/headers/header-img-slogan-btn-2/images/bg-28.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-position: bottom center;
+    opacity: 0.5;
+}

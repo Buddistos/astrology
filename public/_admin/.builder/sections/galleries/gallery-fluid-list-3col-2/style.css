@@ -1,0 +1,7 @@
+#gallery-fluid-list-3col-2 .bg {
+    background-image: url('./sections/galleries/gallery-fluid-list-3col-2/images/bg-wall-2.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity:0.2;
+}

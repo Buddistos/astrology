@@ -1,0 +1,9 @@
+#clients-fluid-6col .bg {
+	background-image: url('./sections/clients/clients-fluid-6col/images/bg-wood-3.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.5;
+}

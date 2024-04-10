@@ -1,5 +1,9 @@
 const mix = require('laravel-mix');
 
+mix.options({
+    processCssUrls: false // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
+});
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,7 +15,5 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.js('resources/js/app.js', 'public/js/scripts.js')
+   .css('resources/css/app.css', 'public/css/styles.css');

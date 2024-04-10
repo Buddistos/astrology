@@ -1,0 +1,13 @@
+#desc-card-4col-2 {
+	background: #96d4e9;
+}
+
+#desc-card-4col-2 .bg {
+	background-image: url('./sections/descriptions/desc-card-4col-2/images/bg-blur-2.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.05;
+}

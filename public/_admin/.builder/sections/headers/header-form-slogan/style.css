@@ -1,0 +1,11 @@
+#header-form-slogan {
+    background: #222222;
+}
+
+#header-form-slogan .bg {
+    background-image: url('./sections/headers/header-form-slogan/images/bg-10.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+}

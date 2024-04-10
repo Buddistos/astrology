@@ -1,0 +1,9 @@
+#popup-center-icon-text .bg {
+	background-image: url('./sections/popups/popup-center-icon-text/images/bg-scene-2.jpg');
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.2;
+}

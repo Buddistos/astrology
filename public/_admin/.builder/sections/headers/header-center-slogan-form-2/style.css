@@ -1,0 +1,11 @@
+#header-center-slogan-form-2 {
+    background: #000000;
+}
+
+#header-center-slogan-form-2 .bg {
+    background-image: url('./sections/headers/header-center-slogan-form-2/images/bg-nature-4.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    opacity: 0.85;
+}

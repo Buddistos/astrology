@@ -1,0 +1,14 @@
+#gallery-list-4col {
+	background: linear-gradient(to bottom, #FBF7EF, #F2F7FF);
+    background: -webkit-linear-gradient(top, #FBF7EF, #F2F7FF);
+}
+
+#gallery-list-4col .bg {
+	background-image: url('./sections/galleries/gallery-list-4col/images/bg-17.png');
+	background-size: 650px auto;
+	-webkit-background-size: 650px auto;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	background-position: center left;
+	opacity: 0.75;
+}

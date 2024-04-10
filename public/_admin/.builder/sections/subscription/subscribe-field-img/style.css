@@ -1,0 +1,7 @@
+#subscribe-field-img .bg {
+    background-image: url('./sections/subscription/subscribe-field-img/images/bg-modal-success.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity:0.5;
+}

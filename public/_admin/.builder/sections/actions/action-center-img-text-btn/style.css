@@ -1,0 +1,11 @@
+#action-center-img-text-btn {
+    background: radial-gradient(circle, #ffffff 30%, #f8efe0 70%);
+    background: -webkit-radial-gradient(circle, #ffffff 30%, #f8efe0 70%);
+}
+
+#action-center-img-text-btn .bg {
+    background-image: url('./sections/actions/action-center-img-text-btn/images/bg-wood-5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.25;
+}
