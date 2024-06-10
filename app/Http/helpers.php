@@ -1,8 +1,7 @@
 <?php
 
-//namespace App\Http;
-
 use App\Models\Setting;
+use Intervention\Image\ImageManager;
 use Jenssegers\Date\Date;
 
 Date::setLocale('ru');
@@ -23,7 +22,7 @@ if (!function_exists('setting')) {
 
 function superadmin()
 {
-    return \Auth::user()->hasRole('superadmin');
+    return Auth::user()->hasRole('superadmin');
 }
 
 function getImage($imageData, $size)
@@ -135,7 +134,7 @@ if (!function_exists('resizeImage')) {
             return '/' . $existsFile;
         }
 
-        $manager = new \Intervention\Image\ImageManager(array('driver' => 'imagick'));
+        $manager = new ImageManager(array('driver' => 'imagick'));
         $image = $manager->make($imagePath);
 
         $myWidth = $image->width();
@@ -192,12 +191,3 @@ if (!function_exists('resizeImage')) {
         return '/' . ltrim($imageFileNew, '/');
     }
 }
-
-
-if (!function_exists('drawMenu')) {
-    function drawMenu()
-    {
-        //	return \App\Models\SiteMenu::$poinst;
-    }
-}
-

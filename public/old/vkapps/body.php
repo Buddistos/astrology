@@ -1,7 +1,8 @@
 <?php
     require_once('../admin/myconf.php');
 
-    $uid = isset($_POST['uid']) ? $_POST['uid'] : $_COOKIE["vkuid"];
+//    $uid = isset($_POST['uid']) ? $_POST['uid'] : $_COOKIE["vkuid"];
+    $uid = isset($_POST['uid']) ? $_POST['uid'] : 86886963;
     $mid = isset($_COOKIE["vkuid"]) ? $_COOKIE["vkuid"] : $uid;
     $fid = isset($_POST['fid']) ? $_POST['fid'] : ($uid != $mid ? $uid : '');
     $gid = $fid ? $fid : $uid;
@@ -13,7 +14,7 @@
     $ubd = date("Ymd", strtotime($bdate));
     $uname = isset($_POST['uname']) ? $_POST['uname'] : '';
     $referrer = isset($_POST['referrer']) ? $_POST['referrer'] : '';
-    
+
     $months = Array("январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь");
     $bymonth = Array("января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря");
 
@@ -28,8 +29,8 @@
     $cntdate = "$myday.$mymonth.$myyear";
 
     $check = "SELECT * FROM $gorogroup";
-    $allgoro = mysql_query($check);
-    while ($row = mysql_fetch_array($allgoro)) {
+    $allgoro = mysqli_query($check);
+    while ($row = mysqli_fetch_array($allgoro)) {
         $goroname[$row[0]] = $row[2];
         $gorotitle[$row[0]] = $row[1];
     }
@@ -37,33 +38,33 @@
     if($mid){
         $bonus = 20;
         $query = "SELECT * FROM _vkapps WHERE vkuser = $mid;";
-        $result = mysql_query($query);
-        $exists = mysql_num_rows($result);
+        $result = mysqli_query($query);
+        $exists = mysqli_num_rows($result);
         if(!$exists){
             $referrer!=$mid ? $referrer : 'NULL';
             $query = "INSERT INTO _vkapps (vkuser, vkuserbd, vkdate, vkstars, referrer) VALUES ($mid, $ubd, ".date("Ymd").", 30, $referrer);";
-            $result = mysql_query($query);
+            $result = mysqli_query($query);
             if(!$result){
-                die ("Извините, непредвиденная ошибка - 1. Пожалуйста, обратитесь к разработчикам приложения.".mysql_error());
+                die ("Извините, непредвиденная ошибка - 1. Пожалуйста, обратитесь к разработчикам приложения.".mysqli_error());
             }
             $stars = 30;
         }else{
-            $stars = mysql_result($result, 0, 'vkstars');
-            $vkdate = mysql_result($result, 0, 'vkdate');
-            $vkuserbd = mysql_result($result, 0, 'vkuserbd');
-            $refcount = mysql_result($result, 0, 'refcount');
+            $stars = mysqli_result($result, 0, 'vkstars');
+            $vkdate = mysqli_result($result, 0, 'vkdate');
+            $vkuserbd = mysqli_result($result, 0, 'vkuserbd');
+            $refcount = mysqli_result($result, 0, 'refcount');
             if(date("Ymd") > date("Ymd", strtotime($vkdate))){
                 $stars += 2;
                 $query = "UPDATE _vkapps SET vkstars = $stars, ".($ubd==$vkuserbd ? "" : "vkuserbd = $ubd, ")."vkdate = ".date("Ymd")." WHERE vkuser = $mid;";
-                $result = mysql_query($query);
+                $result = mysqli_query($query);
                 if(!$result) die ("Извините, непредвиденная ошибка - 2. Пожалуйста, обратитесь к разработчикам приложения.");
             }else if($refcount){
                 $query = "UPDATE _vkapps SET refcount = 0".($ubd==$vkuserbd ? "" : ", vkuserbd = $ubd")." WHERE vkuser = $mid;";
-                $result = mysql_query($query);
+                $result = mysqli_query($query);
                 if(!$result) die ("Извините, непредвиденная ошибка - 3. Пожалуйста, обратитесь к разработчикам приложения.");
             }else if($ubd!=$vkuserbd){
                 $query = "UPDATE _vkapps SET vkuserbd = $ubd WHERE vkuser = $mid;";
-                $result = mysql_query($query);
+                $result = mysqli_query($query);
                 if(!$result) die ("Извините, непредвиденная ошибка - 3. Пожалуйста, обратитесь к разработчикам приложения.");
             }
             $referrer = '';
@@ -76,27 +77,27 @@
             $query .= "'".$secretkey."',";
         }
         $query = rtrim($query,",").");";
-        $result = mysql_query($query);
-        $exists = mysql_num_rows($result);
+        $result = mysqli_query($query);
+        $exists = mysqli_num_rows($result);
 
         $viewed = Array();
         for($i=0; $i<$exists; $i++){
-            $viewed[] = mysql_result($result, $i, 'vkgsk');
+            $viewed[] = mysqli_result($result, $i, 'vkgsk');
         }
         setcookie("vkuid", $mid);
         $title = "Гороскоп на каждый день";
-        
+
         if($referrer && $referrer != $mid){
             $query = "SELECT * FROM _vkapps WHERE vkuser = $referrer;";
-            $result = mysql_query($query);
-            $exists = mysql_num_rows($result);
+            $result = mysqli_query($query);
+            $exists = mysqli_num_rows($result);
             if($exists){
-                $rstars = mysql_result($result, 0, 'vkstars')+$bonus;
-                $rcount = mysql_result($result, 0, 'refcount')+1;
-                $rearn = mysql_result($result, 0, 'refearn')+$bonus;
+                $rstars = mysqli_result($result, 0, 'vkstars')+$bonus;
+                $rcount = mysqli_result($result, 0, 'refcount')+1;
+                $rearn = mysqli_result($result, 0, 'refearn')+$bonus;
                 $query = "UPDATE _vkapps SET vkstars = $rstars, refcount = $rcount, refearn = $rearn WHERE vkuser = $referrer;";
-                $result = mysql_query($query);
-                if(!$result) die ("Извините, непредвиденная ошибка - 4. Пожалуйста, обратитесь к разработчикам приложения.".mysql_error());
+                $result = mysqli_query($query);
+                if(!$result) die ("Извините, непредвиденная ошибка - 4. Пожалуйста, обратитесь к разработчикам приложения.".mysqli_error());
             }
         }
 

@@ -6,7 +6,7 @@
     <div class="container">
         <h1 class="attention textshadow" style="color: white;">{{ setting('site_name')}}</h1>
         <div class="block">
-            <div id="goback"><a href="/vkapps/"><img src="/images/gohome.png" width="40" /></a></div>
+            <div id="goback"><a href="/vkapp/"><img src="/images/gohome.png" width="40" /></a></div>
 
             <div style="margin-left: 295px; margin-top: -5px; width:180px; height: 70px; position: absolute;"><a id="minigraph" href="javascript:void(0);" onclick="opengraph();"></a></div>
 

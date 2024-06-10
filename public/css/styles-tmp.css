@@ -1,62 +1,13 @@
 body{
-    background: url("/images/bg3.jpg");
+    background: url("../images/bg3.jpg");
 }
-input[type="text"], input[type="email"]{
-    border-radius: 3px;
-    font-size: 18px;
-    width: 280px;
-    padding: 5px;
-}
-input[type="submit"]{
-    font-size: 16px;
-    width: 370px;
-    margin-left: 35px;
-    padding: 10px;
-    white-space: pre-wrap;
-    margin: 0 auto;
-    border-radius: 5px;
-}
-a, img, input{
-    outline: none;
-}
-a{
-    color: midnightblue;
-}
-p, a, span, b, strong, li{
-    font-size: 12px;
-    font-family: 'Marmelad', sans-serif;
-    font-weight: 400;
-}
-h1{
-    font-size: 26px;
-    margin-top: 0;
-}
-h2{
-    font-size: 22px;
-}
-h3{
-    font-size: 14px;
-}
-h4{
-    font-size: 10px;
-}
-p{
-    text-align: justify;
-}
-h1, h2, h3, h4{
-    text-align: center;
-    font-family: 'Marmelad', cursive;
-    font-weight: 400;
-}
-.aligncenter{
-    text-align: center;
-    margin: 0 auto;
-}
-.attention{
-    color: orangered;
-}
-.textshadow{
-    text-shadow: 0px 0px 40px rgba(255, 255, 255, 1);
+#astrowin{
+    background: url("../images/blockbg.jpg");
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 25px rgba(255,255,255,0.7);
+    -moz-box-shadow: 0px 0px 25px rgba(255,255,255,0.7);
+    box-shadow: 0px 0px 25px rgba(255,255,255,0.7);
+
 }
 .shadowing, .sociallocker {
     border: 1px solid rgba(0,0,0,0.1);
@@ -67,73 +18,16 @@ h1, h2, h3, h4{
     background: #f5f5f5;
     margin: 10px 5px;
 }
-
-#inform{
-    font-size: 12px;
-    border: 1px solid green;
-    width: 213px;
-    color: green;
-    display: none;
-    padding: 0 5px;
-    overflow: hidden;
+.textshadow{
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
+    padding: 15px;
+    color: white;
 }
-#inform p{
-    text-align: left;
-}
-.ymaps-b-form-input__box{
-    margin-right: 10px;
-}
-.container{
-    margin: 0 auto;
-    width: 560px;
-    overflow: hidden;
-    padding: 5px 10px 0 10px;
-    margin-top: 40px;
-}
-body{
-    padding: 0;
-    margin: 0;
-}
-.block{
-    padding: 10px 20px 20px 20px;
-    margin: 20px;
-    margin-bottom: 40px;
-    background: url("/images/blockbg.jpg");
-    border-radius: 15px;
-    overflow: hidden;
-    -webkit-box-shadow: 0px 0px 40px rgba(255,255,255,0.7);
-    -moz-box-shadow: 0px 0px 40px rgba(255,255,255,0.7);
-    box-shadow: 0px 0px 40px rgba(255,255,255,0.7);
-}
-#menu{
-    text-align: center;
-    margin-top: -80px;
-    position: fixed;
-    padding-bottom: 0;
-    border: 1px solid grey;
-    -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.3);
-    box-shadow: 0 3px 3px rgba(0,0,0,0.3);
-    width: 880px;
-    z-index: 500;
-}
-#menu a{
-    display: block;
-    padding: 20px 30px 10px 30px;
-    float: left;
-    text-decoration: none;
-    color: darkred;
-}
-#menu a:hover{
+.attention {
     color: orangered;
 }
-.innertext{
-    width: 530px;
-    margin: 0 auto;
-    text-align: center;
-}
 .ourgoro{
-    width: 108px; 
+    width: 108px;
     height: 125px;
     float: left;
     text-align: center;
@@ -225,6 +119,143 @@ body{
 #_business a b:before{
     content: 'Бизнес';
 }
+
+/**
+input[type="text"], input[type="email"]{
+    border-radius: 3px;
+    font-size: 18px;
+    width: 280px;
+    padding: 5px;
+}
+input[type="submit"]{
+    font-size: 16px;
+    width: 370px;
+    margin-left: 35px;
+    padding: 10px;
+    white-space: pre-wrap;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+**/
+/*a, img, input{
+    outline: none;
+}
+a{
+    color: midnightblue;
+}*/
+/*
+p, a, span, b, strong, li{
+    font-size: 12px;
+    font-family: 'Marmelad', sans-serif;
+    font-weight: 400;
+}
+*/
+/*
+h1{
+    font-size: 26px;
+    margin-top: 0;
+}
+h2{
+    font-size: 22px;
+}
+h3{
+    font-size: 14px;
+}
+h4{
+    font-size: 10px;
+}
+*/
+/*p{
+    text-align: justify;
+}
+*/
+/*
+.aligncenter{
+    text-align: center;
+    margin: 0 auto;
+}
+.attention{
+    color: orangered;
+}
+
+
+#inform{
+    font-size: 12px;
+    border: 1px solid green;
+    width: 213px;
+    color: green;
+    display: none;
+    padding: 0 5px;
+    overflow: hidden;
+}
+#inform p{
+    text-align: left;
+}
+.ymaps-b-form-input__box{
+    margin-right: 10px;
+}
+!*.container{
+    margin: 0 auto;
+    width: 560px;
+    overflow: hidden;
+    padding: 5px 10px 0 10px;
+    margin-top: 40px;
+}*!
+body{
+    padding: 0;
+    margin: 0;
+}
+#menu{
+    text-align: center;
+    margin-top: -80px;
+    position: fixed;
+    padding-bottom: 0;
+    border: 1px solid grey;
+    -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    width: 880px;
+    z-index: 500;
+}
+#menu a{
+    display: block;
+    padding: 20px 30px 10px 30px;
+    float: left;
+    text-decoration: none;
+    color: darkred;
+}
+#menu a:hover{
+    color: orangered;
+}
+.innertext{
+    width: 530px;
+    margin: 0 auto;
+    text-align: center;
+}
+.ourgoro{
+    width: 108px;
+    height: 125px;
+    float: left;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid grey;
+    margin: 0 20px 40px 27px;
+    padding: 0;
+    background: #fff;
+    background: url('/images/action/goroback.png');
+}
+.ourgoro a.more{
+    display: block;
+    text-decoration: none;
+    margin: 0;
+    color: darkgrey;
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+.ourgoro a.more b{
+    font-size: 16px;
+}
+
 .popup_modal{
     width: 700px;
     padding: 20px 20px 20px 20px;
@@ -326,13 +357,13 @@ body{
 }
 .feature .carusel{
     width: 800px;
-    margin: auto;    
+    margin: auto;
     padding: 30px 0;
     padding-right: 40px;
     margin-left: 30px;
 }
 .feature .carusel li{
-    margin-left: 40px;        
+    margin-left: 40px;
     box-shadow: 0px 0px 40px rgba(255,255,255,0.7);
     border-radius: 15px;
     height: 305px;
@@ -350,21 +381,21 @@ body{
     background: url('/images/feature/arrows.png') no-repeat 0px 0px;
     position: absolute;
     top: 45%;
-    left: 0;    
+    left: 0;
 }
 .feature .prev:hover{
-    background-position: 0 -38px;    
+    background-position: 0 -38px;
 }
 .feature .prev{
     margin-left: -20px;
 }
 .feature .next{
     left: 100%;
-    background-position: -26px 0px;     
+    background-position: -26px 0px;
     margin-left: 50px;
 }
 .feature .next:hover{
-    background-position: -26px -38px;    
+    background-position: -26px -38px;
 }
 .reviews{
     margin-top: 50px;
@@ -414,3 +445,4 @@ body{
 }
 
 .pp {position: absolute; top: 85px; left: 200px; color: #333; cursor: pointer;}
+*/

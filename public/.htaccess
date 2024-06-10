@@ -40,6 +40,8 @@ RewriteEngine On
     RewriteRule ^(.*)$ /_admin/$1 [L,QSA] # HTTP -> HTTPS
 
     RewriteCond %{HTTP_HOST} !^(admin\.)?astro.local$ [NC]
+    RewriteCond %{HTTP_HOST} !^astro\.ru$ [NC]
+    RewriteCond %{HTTP_HOST} !^astro\.xyz$ [NC]
     RewriteRule .* https://astro.local%{REQUEST_URI} [R=301,L]
 
     # HTTP -> HTTPS
@@ -50,8 +52,8 @@ RewriteEngine On
     RewriteRule ^index\.php$ / [R=301,L]
 
     # Редирект на страницу без многократных /.
-    RewriteCond %{THE_REQUEST} //
-    RewriteRule .* /$0 [L,R=301]
+#    RewriteCond %{THE_REQUEST} //
+#    RewriteRule .* /$0 [L,R=301]
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d

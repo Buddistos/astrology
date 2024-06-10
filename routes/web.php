@@ -1,12 +1,9 @@
 <?php
 
+Route::any('ajax/{action}', 'App\Http\Controllers\AjaxController@_html')->name('ajax');
 
-Route::any('ajax/{action}', 'AjaxController@_html')->name('ajax');
+Route::get('vkapp', 'App\Http\Controllers\VKappController@index')->name('vkapp');
 
-Route::get('/vkapp', 'VKappController@index');
-
-Route::get('/', function () {
-    return view('main');
-});
+Route::get('/', 'App\Http\Controllers\IndexController@index')->name('main');
 
 Auth::routes();

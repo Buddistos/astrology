@@ -1,5 +1,5 @@
 body{
-    background: url("../images/bg3.jpg");
+    //background: url("../images/bg3.jpg");
 }
 input[type="text"], input[type="email"]{
     border-radius: 3px;
@@ -133,7 +133,7 @@ body{
     text-align: center;
 }
 .ourgoro{
-    width: 108px; 
+    width: 108px;
     height: 125px;
     float: left;
     text-align: center;
@@ -326,13 +326,13 @@ body{
 }
 .feature .carusel{
     width: 800px;
-    margin: auto;    
+    margin: auto;
     padding: 30px 0;
     padding-right: 40px;
     margin-left: 30px;
 }
 .feature .carusel li{
-    margin-left: 40px;        
+    margin-left: 40px;
     box-shadow: 0px 0px 40px rgba(255,255,255,0.7);
     border-radius: 15px;
     height: 305px;
@@ -350,21 +350,21 @@ body{
     background: url('../images/feature/arrows.png') no-repeat 0px 0px;
     position: absolute;
     top: 45%;
-    left: 0;    
+    left: 0;
 }
 .feature .prev:hover{
-    background-position: 0 -38px;    
+    background-position: 0 -38px;
 }
 .feature .prev{
     margin-left: -20px;
 }
 .feature .next{
     left: 100%;
-    background-position: -26px 0px;     
+    background-position: -26px 0px;
     margin-left: 50px;
 }
 .feature .next:hover{
-    background-position: -26px -38px;    
+    background-position: -26px -38px;
 }
 .reviews{
     margin-top: 50px;
