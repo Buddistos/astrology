@@ -2,5 +2,5 @@ import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
 
-require('./bootstrap');
-
+require( 'jquery-toast-plugin');
+require('bootstrap');

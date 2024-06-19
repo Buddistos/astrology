@@ -22,9 +22,8 @@ class VKappController extends Controller
     {
 
         //$name = $request->session()->put('vkuid', 6541);
-        $name = session('user_id');
         //dump(session()->driver());
-        $user_id = $name ?: $_GET['viewer_id'];
+        $user_id = isset($name) ? $name : $_GET['viewer_id'];
         $vkuserModel = new VKUser();
         $userdata = $vkuserModel->where('vkuser', $user_id)->first();
         $data = [

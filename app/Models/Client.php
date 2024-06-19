@@ -27,4 +27,17 @@ class Client extends Model
         return self::where($method, $clientId)->first();
     }
 
+    /**
+     * @param null $date
+     * @return mixed Гороскоп клиента
+     */
+   public function clientAstroKeys($date = null)
+    {
+        if(!$date) $date = date('Ymd');
+
+        for ($i = 0; $i <= 6; $i++) {
+            $cgsk[$i] = md5($i . $this->id . $date);
+        }
+        return $cgsk;
+    }
 }

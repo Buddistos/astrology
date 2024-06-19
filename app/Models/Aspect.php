@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ephemerides extends Model
+class Aspect extends Model
 {
-    use HasFactory;
+    protected $table = 'aspects';
 
-    protected $table = 'ephemerides';
+    use HasFactory;
 
     public function __construct()
     {
 
     }
-
 }

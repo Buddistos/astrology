@@ -54,31 +54,35 @@ class ClientController extends Controller
 
                 //Проверка наличия зрегистрированного пользователя
                 if ($client) {
-                    $out['msg'] = '<h5 class="text-center">Добро пожаловать, <b>' . $auth_data['first_name'] . '</b></h5>';
+                    $out['msg'] = '<h5 class="text-center"><b>' . $auth_data['first_name'] . '</b></h5>';
                 } else {
                     $client = new Client();
-                    $validator =  Validator::make($auth_data, [
+                    $validator = Validator::make($auth_data, [
                         "id" => "required|max:255",
                         "username" => "required|max:255",
-                        "first_name" => "required|max:255",
+                        "first_name" => "max:255",
                         "last_name" => "max:255",
                         "photo_url" => "max:255",
 //                        "auth_date" => "1717798888",
                     ]);
-                    if($validator->fails()){
+                    if ($validator->fails()) {
                         $out['err'] = 1;
-                        $out['msg'] = 'Ошибка регистрации. Пожалуйста, укажите в настройках Telegram имя пользователя.';
-                    }else {
+                        $out['msg'] = 'Ошибка регистрации';
+                    } else {
                         $client['telegram_id'] = $auth_data['id'];
                         $client['name'] = $auth_data['username'];
-                        $client['firstname'] = $auth_data['last_name'];
+                        $client['firstname'] = isset($auth_data['first_name']) ? $auth_data['first_name'] : $auth_data['username'];
                         $client['lastname'] = $auth_data['last_name'];
                         $client['avatar'] = $auth_data['photo_url'];
                         $client['app'] = 'tga';
+                        $client['status'] = 1;
                         $client->save();
                         $out['msg'] = $auth_data['first_name'] . ', Вы зарегистрированы';
                     }
                 }
+                $out['client'] = $client;
+                session(['client_id' => $client->id]);
+                session()->save();
             }
         } else {
             $out['err'] = 1;
@@ -86,6 +90,4 @@ class ClientController extends Controller
         }
         return $out;
     }
-
-
 }
