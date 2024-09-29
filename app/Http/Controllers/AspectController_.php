@@ -7,15 +7,12 @@ use App\Models\Ephemerides;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\Array_;
 use function PHPUnit\Framework\isEmpty;
-use function PHPUnit\Framework\isNull;
 
 class AspectController extends Controller
 {
     private $planets = array('sun', 'moon', 'mercury', 'venus', 'mars', 'jupiter', 'saturn', 'uranium', 'neptune', 'pluto');
     public $symbols = array('&#9788;', '&#9790;', '&#9791;', '&#9792;', '&#9794;', '&#9795;', '&#9796;', '&#9797;', '&#9798;', '&#9799;');
-    //public $orbises = array(10, 10, 8, 8, 8, 6, 6, 4, 4, 4);
-    //public $orbises = array(2, 2, 1, 1, 1, 1, 1, 1, 1, 1);
-    public $orbises = array(0, 0, 1, 1, 1, 0, 0, 1, 1, 1);
+    public $orbises = array(10, 10, 8, 8, 8, 6, 6, 4, 4, 4);
     public $transit = array('Транзитное', 'Транзитная', 'Транзитный', 'Транзитная', 'Транзитный', 'Транзитный', 'Транзитный', 'Транзитный', 'Транзитный', 'Транзитный');
     public $planet1 = array('солнце', 'луна', 'меркурий', 'венера', 'марс', 'юпитер', 'сатурн', 'уран', 'нептун', 'плутон');
     public $inorb = array(
@@ -38,15 +35,6 @@ class AspectController extends Controller
     {
     }
 
-    /**
-     * @param $birthday - ДР
-     * @param $birthtime - Время рождения
-     * @param $fordate - расчетная дата
-     * @param $utc - UTC места рождения
-     * @param null $astro - Тема аспекта
-     * @param int $during - Количество расчетных дней
-     * @return - Массив аспектов на расчетные даты
-     */
     public function getAspects($birthday, $birthtime, $fordate, $utc, $astro = null, $during = 30)
     {
         $ratio = 0;
@@ -55,7 +43,7 @@ class AspectController extends Controller
         $transplan = array(0, 2, 3, 4); //номера транзитных планет
         $degrees = array(0, 60, 90, 120, 180);
 
-        $bdate = date("Y-m-d", strtotime($birthday));
+        $edate = date("Y-m-d", strtotime($birthday));
         $sdate = date("Y-m-d", strtotime($fordate));
         $fdate = date("Y-m-d", strtotime($sdate . ' +' . $during . 'days'));
         $etime = date("H:i:s", strtotime($birthtime));
@@ -71,9 +59,10 @@ class AspectController extends Controller
                 $checktime[0]--;
             }
         }
-        if (strlen($checktime[0]) == 1) {
+        if(strlen($checktime[0]) == 1){
             $checktime[0] = sprintf("%02d", $checktime[0]);
         }
+
         /**
          * TODO
          * Исправить проверочное время с учетом разницы UTC
@@ -81,12 +70,13 @@ class AspectController extends Controller
         $checktime[1] = '00';
         $checktime[2] = '00';
         $etime = implode(':', $checktime);
+
         /**
-         * $ephemerieds1 - Положение планет на день рождения по времени рождения
+         * $ephemerieds1 - Положение планет на день рождения
          * $mydegree - углы планет
          */
         $ephemerides = new Ephemerides();
-        $ephemerides1 = $ephemerides->where('edate', $bdate)->whereTime('etime', $etime)->get();
+        $ephemerides1 = $ephemerides->where('edate', $edate)->whereTime('etime', $etime)->get();
         foreach ($ephemerides1 as $row) {
             for ($i = 0; $i < 10; $i++) {
                 $p = $this->planets[$i];
@@ -95,14 +85,14 @@ class AspectController extends Controller
         }
 
         /**
-         * $ephemerieds1 - Эфемериды на месяц от выбранной даты по времени рождения
+         * $ephemerieds1 - Эфемериды на месяц от выбранной даты
          */
         $ephemerides2 = $ephemerides->whereBetween('edate', [$sdate, $fdate])->whereTime('etime', $etime)->get();
+        $t = 0;
         $aspects = Aspect::where('id_gorogroup', $astro)->get();
         $results = collect();
         foreach ($ephemerides2 as $ephemeride) {
             $mydate = $ephemeride->edate;
-            $results->put($mydate, []);
             $result = [];
             foreach ($transplan as $tp) {
                 $p = $this->planets[$tp];
@@ -111,72 +101,77 @@ class AspectController extends Controller
                 $br = false;
 
                 for ($np = 0; $np < 10; $np++) {
-                    //Угол натальной планеты
+                     //Угол натальной планеты
                     $d1 = $mydegree[$np];
 
                     /**
                      * Высчитываем орбис - допустимое отклонение для аспекта)
-                     * Таблица $this->orbises
+                     * Таблица $orbises
                      */
-                    $orbis = 1; //$this->orbises[$np];
-                    for ($c = -$orbis; $c <= $orbis; $c++) {
+
+                    for ($c = -1; $c <= 1; $c++) {
                         $dc = abs($d1 - $d2 + $c);
+
                         $dc = $dc > 180 ? 360 - $dc : $dc;
-                        $aa = $mydate . $tp . $dc . $np; //для занесения в проверочный массив $asp и последующей проверки для исключения дублей
+
+                        if ($tp == 2) {
+                           // dump($p . ' (' . $d1 .') '  . ' ' . (isset($this->inorb[$dc])?$this->inorb[$dc]:'мимо') . ' (' . $dc .') ' . $this->planet2[$np] . ' (' . $d2 .') ' );
+                        }
+
+
+                        $aa = $mydate . $tp . $dc . $np;
                         if (array_key_exists($aa, $asp)) {
                             $br = true;
                             break;
                         } else if (in_array($dc, $degrees)) {
                             $asp[$aa] = 1;
-                            $myval = ($tp) . $dc . ($np);
+                            $myval = ($tp + 1) . $dc . ($np + 1);
                             $myvals[] = $myval;
 
                             $aspectSearch = $aspects->filter(function ($item) use ($tp, $dc, $np) {
-                                if ($item->id_planet1 == $tp && $item->degrees == $dc && $item->id_planet2 == $np) return true;
+                                if($item->id_planet1 == $tp+1 && $item->degrees == $dc && $item->id_planet2 == $np) return true;
                             });
                             $aspect = $aspectSearch->first();
                             if (isset($aspect->aspects)) {
                                 $r['interpretation'] = $aspect->aspects;
                                 $r['symbol'] = $this->symbols[$tp] . ' ' . $this->symorb[$dc] . ' ' . $this->symbols[$np];
-                                $r['aspect'] = $this->transit[$tp] . ' ' . $this->planet1[$tp] . ' ' . $this->inorb[$dc] . ' с ' . $this->planet2[$np] . ' - <span style="font-family: fantasy; font-size: 16px;">' . $this->symbols[$tp] . ' ' . $this->symorb[$dc] . ' ' . $this->symbols[$np] . '</span> (орбис ' . $c . ', угол ' . $dc . ')<br>';
-                                $rate = $aspect->rating > 100 ? 100 - $aspect->rating : $aspect->rating;
-                                $r['rating'] = (abs($rate)-abs($c)<=0 ? 1 : abs($rate)-abs($c))*$rate/abs($rate);
+                                $r['aspect'] = $this->transit[$tp] . ' ' . $this->planet1[$tp] . ' ' . $this->inorb[$dc] . ' с ' . $this->planet2[$np] . ' - <span style="font-family: fantasy; font-size: 16px;">' . $this->symbols[$tp] . ' ' . $this->symorb[$dc] . ' ' . $this->symbols[$np] . '</span><br>';
+                                $r['rating'] = $aspect->rating > 100 ? 100 - $aspect->rating : $aspect->rating;
                                 $result[] = $r;
                             } else {
                                 unset($aspect);
                             }
                         }
                     }
-                    $results->put($mydate, collect($result));
                     if ($br) break;
                 }
+                if (isset($result)) {
+        //            dd($result);
+                } else {
+                    $r['interpretation'] = '';
+                    $r['aspect'] = 'В этот день звезды не оказывают особого влияния на Вашу жизнь. Ни положительных, ни отрицательных аспектов не выявлено.';
+                    $r['rating'] = 0;
+                    $r['symbol'] = '';
+                    $result[] = collect($r);
+                }
+                /*                                @foreach ($aspects as $aspday => $aspect)
+                @php
+                $ad[] = '<span style="font-size: 12px; padding: 2px 3px; background-color: #ffff00; float: left; clear: both; width: 60px; text-align: center; font-family: fantasy;">' . date("d-m-Y", strtotime($mydate)) . '</span><br>';
+                $dayline[] = 'maketext("' . date("d", strtotime($aspday)) . '", ' . $loop->iteration . ' * scale + 23, 290, "#555", "");';
+                $sumrate = array_sum(array_column($aspect, 'rating'));
+                $maxrate = max(array_column($aspect, 'rating'));
+                $minrate = min(array_column($aspect, 'rating'));
+                $maxabs = abs($maxrate) > abs($minrate) ? $maxrate : $minrate;
+                @endphp
+                {{--{ xpoint: {{ ($loop->iteration + 1)  * 50 / 2 * scale }}, y0: 150, ypoint: {{ -$sumrate * 7 }} },--}}
+                {xpoint: step + {{ $loop->iteration - 1 }} * scale + shift, y0: 150, ypoint: {{ -$sumrate * 9 }}},
+                @endforeach*/
+                $results->put($mydate, $result);
             }
-            if ($results[$mydate]) {
-            } else {
-                $r['interpretation'] = '';
-                $r['aspect'] = 'В этот день звезды не оказывают особого влияния на Вашу жизнь. Ни положительных, ни отрицательных аспектов не выявлено.';
-                $r['rating'] = 0;
-                $r['symbol'] = '';
-                $results->put($mydate, collect($r));
-            }
-            /* @foreach ($aspects as $aspday => $aspect)
-             *
-             * @php
-             * $ad[] = '<span style="font-size: 12px; padding: 2px 3px; background-color: #ffff00; float: left; clear: both; width: 60px; text-align: center; font-family: fantasy;">' . date("d-m-Y", strtotime($mydate)) . '</span><br>';
-             * $dayline[] = 'maketext("' . date("d", strtotime($aspday)) . '", ' . $loop->iteration . ' * scale + 23, 290, "#555", "");';
-             * $sumrate = array_sum(array_column($aspect, 'rating'));
-             * $maxrate = max(array_column($aspect, 'rating'));
-             * $minrate = min(array_column($aspect, 'rating'));
-             * $maxabs = abs($maxrate) > abs($minrate) ? $maxrate : $minrate;
-             * @endphp
-             * {{--{ xpoint: {{ ($loop->iteration + 1)  * 50 / 2 * scale }}, y0: 150, ypoint: {{ -$sumrate * 7 }} },--}}
-             * {xpoint: step + {{ $loop->iteration - 1 }} * scale + shift, y0: 150, ypoint: {{ -$sumrate * 9 }}},
-             * @endforeach
-             */
-
-
         }
-        return $results;
+        dd("!!!");
+        dd($result->all());
+        return $result;
     }
 
 }

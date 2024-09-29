@@ -1,4 +1,12 @@
 <?php
+function dd($vars)
+{
+    echo "<pre>";
+    var_dump($vars);
+    echo "</pre>";
+
+}
+
 $aspects = "";
 $ratio = 0;
 $asp = array();
@@ -12,12 +20,19 @@ if ($birthday == "0000-00-00") {
 }
 $edate = date("Y-m-d", strtotime("$birthday"));
 $cdate = date("Y-m-d", strtotime("$cntdate"));
+$fdate = date("Y-m-d", strtotime("$cntdate"));
+$ldate = date("Y-m-d", strtotime("$cntdate +30days"));
+
+/*
 $fdate = date("Y-m-1", strtotime("$cntdate"));
 $ldate = date("Y-m-t", strtotime("$cntdate"));
-$check = "SELECT edate, etime, sun, moon, mercury, venus, mars, jupiter, saturn, uranium, neptune, pluto FROM ephemerides WHERE edate = '$edate' OR edate BETWEEN '$fdate' AND '$ldate'";
+*/
+
+$check = "SELECT edate, etime, sun, moon, mercury, venus, mars, jupiter, saturn, uranium, neptune, pluto FROM ephemerides WHERE etime = '08:00:00' AND (edate = '$edate' OR edate BETWEEN '$fdate' AND '$ldate')";
 //	$check = "SELECT * FROM _ephemerides WHERE edate = '$edate' OR edate = '$cdate'";
 $ephemerides = mysqli_query($mysql, $check);
 $exist = mysqli_num_rows($ephemerides) or die(mysqli_error());
+
 if (!$exist) {
     die ("Извините, непредвиденная ошибка. Пожалуйста, обратитесь к разработчикам приложения.");
 }
@@ -50,9 +65,9 @@ while ($row = mysqli_fetch_object($ephemerides)) {
     if ($row->edate == $edate) {
         $mydate = $row->edate;
         $mytime = $row->etime;
-        for ($i = 3; $i < 13; $i++) {
-            $np = $i - 3;
-            $natal[$t][] = $row->$planets[$np];
+        for ($np = 0; $np < 10; $np++) {
+            $p = $planets[$np];
+            $natal[] = $row->$p;
         }
         $t++;
     } else {
@@ -61,14 +76,14 @@ while ($row = mysqli_fetch_object($ephemerides)) {
         if (!array_key_exists($mydate, $aspects)) {
             $aspects[$mydate] = array();
         }
-        for ($i = 3; $i <= 7; $i++) {
-            if ($i - 3 == 1) continue;
-            $tp = $i - 3;
-            $d2 = $row->$planets[$tp];
+        for ($tp = 0; $tp <= 4; $tp++) {
+            if ($tp == 1) continue;
+            $p = $planets[$tp];
+            $d2 = $row->$p;
             $br = false;
-            for ($t = 0; $t < 12; $t++) {
+//            for ($t = 0; $t < 12; $t++) {
                 for ($np = 0; $np < 10; $np++) {
-                    $d1 = $natal[$t][$np];
+                    $d1 = $natal[$np];
                     for ($c = -1; $c <= 1; $c++) {
                         //$ccc++;
                         //if($np>5 && $c!=0) continue;
@@ -80,7 +95,7 @@ while ($row = mysqli_fetch_object($ephemerides)) {
                             break;
                         } else if (in_array($dc, $degrees)) {
                             $asp[$aa] = 1;
-                            $myval = ($tp + 1) . $dc . ($np + 1);
+                            $myval = $tp . $dc . $np;
                             $myvals[] = $myval;
                             $aspects[$mydate][] = $myval;
                             $rating[$mydate][] = $c;
@@ -88,50 +103,56 @@ while ($row = mysqli_fetch_object($ephemerides)) {
                     }
                     if ($br) break;
                 }
-                if ($br) break;
-            }
+//                if ($br) break;
+//            }
         }
     }
 }
+
 mysqli_free_result($ephemerides);
-$check = "SELECT id_planet1, degrees, id_planet2, aspects, rating  FROM _aspects WHERE id_gorogroup = $id_gorogroup";
+$check = "SELECT id_planet1, degrees, id_planet2, aspects, rating  FROM aspects WHERE id_gorogroup = 1"; //"$id_gorogroup";
 $aspres = mysqli_query($mysql, $check);
 while ($row = mysqli_fetch_object($aspres)) {
     $myval = $row->id_planet1 . $row->degrees . $row->id_planet2;
     if (!in_array($myval, $myvals)) continue;
-    $symbol[$row->id_planet1 . $row->degrees . $row->id_planet2] = array($symbols[$row->id_planet1 - 1] . ' ' . $symorb[$row->degrees] . ' ' . $symbols[$row->id_planet2 - 1]);
+    $symbol[$row->id_planet1 . $row->degrees . $row->id_planet2] = array($symbols[$row->id_planet1] . ' ' . $symorb[$row->degrees] . ' ' . $symbols[$row->id_planet2]);
     $aspect[$row->id_planet1 . $row->degrees . $row->id_planet2] = array(
         //Заголовок аспекта
-        $planet1[$row->id_planet1 - 1] . ' ' . $planet2[$row->id_planet1 - 1] . ' ' . $inorb[$row->degrees] . ' с ' . $planet3[$row->id_planet2 - 1] . ' - <span style="font-family: fantasy; font-size: 16px;">' . $symbols[$row->id_planet1 - 1] . ' ' . $symorb[$row->degrees] . ' ' . $symbols[$row->id_planet2 - 1] . '</span>',
+        $planet1[$row->id_planet1] . ' ' . $planet2[$row->id_planet1] . ' ' . $inorb[$row->degrees] . ' с ' . $planet3[$row->id_planet2] . ' - <span style="font-family: fantasy; font-size: 16px;">' . $symbols[$row->id_planet1] . ' ' . $symorb[$row->degrees] . ' ' . $symbols[$row->id_planet2] . '</span>',
         //Текстовая часть аспекта
         $row->aspects,
         //Оценка аспекта, приведение к виду -0+
         $row->rating > 100 ? 100 - $row->rating : $row->rating
     );
-    var_dump($myval);
 }
 $asp = [];
 foreach ($aspects as $mydate => $dateasp) {
+
     $ratio = 0;
-    $ad = '<span style="font-size: 12px; padding: 2px 3px; background-color: yellow; float: left; clear: both; width: 60px; text-align: center; font-family: fantasy;">' . date("d-m-Y", strtotime($mydate)) . '</span><br>';
+    $ad = '<span style="font-size: 12px; padding: 2px 3px; background-color: #ffff00; float: left; clear: both; width: 60px; text-align: center; font-family: fantasy;">' . date("d-m-Y", strtotime($mydate)) . '</span><br>';
     for ($i = 0; $i < sizeOf($dateasp); $i++) {
         if (!sizeOf($aspect[$dateasp[$i]])) continue;
         $r = $aspect[$dateasp[$i]][2];
-        //$cr = abs($rating[$mydate][$i]);
-        //$r = (abs($r)-$cr<=0?1:abs($r)-$cr)*$r/abs($r);
+        $bbb = $r;
+        $cr = abs($rating[$mydate][$i]);
+        $r = (abs($r)-$cr<=0 ? 1 : abs($r)-$cr)*$r/abs($r);
+        //dd($bbb . '*' . $cr . '*' . $r);
         if ($cdate == $mydate) {
             $rimg = $r > 0 ? 'b_blu' . $r : 'b_red' . abs($r);
             $singlerate[] = $r;
             $asp[] = '<p class="rating" style="cursor: pointer;" title="Опубликовать на стене"><img title="Поделиться этим аспектом" src="' . $rimg . '.gif" style="float: left; margin-top:4px;" align="left"><b>' . $aspect[$dateasp[$i]][0] . '</b><br>' . $aspect[$dateasp[$i]][1] . '</p>';
         }
-        $ad .= '<b style="font-size: 12px; padding: 2px 3px; background-color: yellow; float: left; clear: both; width: 60px; text-align: center; font-family: fantasy; color: ' . ($r > 0 ? 'green' : 'red') . '">' . $symbol[$dateasp[$i]][0] . '</b><br>';
+        $ad .= '<b style="font-size: 12px; padding: 2px 3px; background-color: yellow; float: left; clear: both; width: 60px; text-align: center; font-family: fantasy; color: ' . ($r > 0 ? 'green' : 'red') . '">' . $r . ' * ' . $symbol[$dateasp[$i]][0] . '</b><br>';
         $ratio += $r;
+        //dd($ratio);
     }
+//    die('DoNE!');
+
     $rate[] = $ratio;
     $aspday[] = $ad;
 }
 
-if ($gsk && $stars - $viewcost <= 0 && !$viewed) {
+if (0 && $gsk && $stars - $viewcost <= 0 && !$viewed) {
     echo "
             <h3 class='aligncenter callbacks'>Извините, у Вас не хватает звезд для просмотра этого гороскопа.</h3>
             <br style='clear:both;'>
@@ -171,7 +192,7 @@ if ($gsk && $stars - $viewcost <= 0 && !$viewed) {
             }
         }
         if (!$mmid && count($singlerate) - $ccc) {
-            echo "<span style='border-bottom: 1px dashed; cursor: pointer;' onclick='$(\".reverse\").toggle(); VK.callMethod(\"resizeWindow\", 600, $(\"body .container\").height()+70);'>Менее значимые аспекты <b class='reverse'>+</b><b class='reverse' style='display: none;'>-</b></span><div class='reverse' style='display: none;'>";
+            echo "<span style='border-bottom: 1px dashed; cursor: pointer;' onclick='$(\".reverse\").toggle(); //VK.callMethod(\"resizeWindow\", 600, $(\"body .container\").height()+70);'>Менее значимые аспекты <b class='reverse'>+</b><b class='reverse' style='display: none;'>-</b></span><div class='reverse' style='display: none;'>";
             $mmid = 1;
         }
         foreach ($singlerate as $key => $val) {
@@ -189,7 +210,6 @@ $sd = date("d ", strtotime("$fdate"));
 $ed = date("d ", strtotime("$ldate")) . $bymonth[date("n", strtotime("$ldate")) - 1] . date(" Y г.", strtotime("$fdate"));
 echo "
     <div id='graph' style='height: 180px; width: 475px; margin-top: 10px; padding-bottom: 25px;display: none;'>
-        <input type='hidden' value='График силы аспектов по дням с " . $sd . " по " . $ed . "'>
         <svg class='rate shadowing' style='height: 100%; width: 96%; background: white; border-radius: 10px;padding: 0;'
             xmlns='http://www.w3.org/2000/svg' version='1.1'
             xmlns:xlink='http://www.w3.org/1999/xlink'>
@@ -263,7 +283,7 @@ echo "
     for(i=0; i<30; i++){
         makeline([[50+i*25, 130],[50+i*25, -130]], '#FFF', '#ccc', 0.3, '');
     }
-    $curdateline;
+    //$curdateline;
     var online = 0;
     svg.selectAll('circle')
         .data(rate)

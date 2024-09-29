@@ -5,7 +5,7 @@
 
     $transplan = Array(0, 2, 3, 4); //номера транзитных планет
     $degrees = Array(0, 60, 90, 120, 180);
-	
+
 	$edate = date("Y-m-d", strtotime("$birthday"));
 	$cdate = date("Y-m-d", strtotime("$cntdate"));
 	$cdate30 = date("Y-m-d", strtotime("$cdate +30 days"));
@@ -13,10 +13,10 @@
 //	$check = "SELECT * FROM _ephemerides WHERE edate = '$edate' OR edate = '$cdate'";
     $ephemerides = mysql_query($check);
     $exist = mysql_num_rows($ephemerides) or die(mysql_error());
-    if(!$exist){                        
+    if(!$exist){
         die ("Something wrong! Please call to administrator.<br>".mysql_error());
     }
-    
+
     $planets = Array('sun', 'moon', 'mercury', 'venus', 'mars', 'jupiter', 'saturn', 'uranium', 'neptune', 'pluto');
     $symbols = Array('&#9788;', '&#9790;', '&#9791;', '&#9792;', '&#9794;', '&#9795;', '&#9796;', '&#9797;', '&#9798;', '&#9799;');
     $orbises = Array(0, 0, 1, 1, 1, 0, 0, 1, 1, 1);
@@ -25,16 +25,16 @@
     $planet1 = Array('Транзитное', 'Транзитная', 'Транзитный', 'Транзитная', 'Транзитный', 'Транзитный', 'Транзитный', 'Транзитный', 'Транзитный', 'Транзитный');
     $planet2 = Array('солнце', 'луна', 'меркурий', 'венера', 'марс', 'юпитер', 'сатурн', 'уран', 'нептун', 'плутон');
     $inorb = Array(
-        0   => "в соединении", 
+        0   => "в соединении",
         60  => "в секстиле",
-        90  => "в квадратуре", 
+        90  => "в квадратуре",
         120 => "в тригоне",
         180 => "в оппозиции"
     );
     $symorb = Array(
-        0   => "&#9740;", 
+        0   => "&#9740;",
         60  => "&#10033;",
-        90  => "&#9744;", 
+        90  => "&#9744;",
         120 => "&#9651;",
         180 => "&#9741;"
     );
@@ -125,12 +125,12 @@
 
     $sd = date("d ", strtotime("$cdate")).$bymonth[date("n", strtotime("$cdate"))-1].(date("Y", strtotime("$cdate")) <> date("Y", strtotime("$mydate")) ? date(" Y г.", strtotime("$cdate")) : "");
     $ed = date("d ", strtotime("$mydate")).$bymonth[date("n", strtotime("$mydate"))-1].date(" Y г.", strtotime("$mydate"));
-    
+
     echo "
     <div class='info'>
         <p>
             <b>Обозначения</b><br>
-            Для наглядности благоприятные указания помечены синими черточками перед текстом, а неблагоприятные - красными черточками. Их длина соответствует силе влияния этого аспекта. 
+            Для наглядности благоприятные указания помечены синими черточками перед текстом, а неблагоприятные - красными черточками. Их длина соответствует силе влияния этого аспекта.
         </p>
         <p>
             <table border='0' width='100%'>
@@ -150,9 +150,9 @@
         </p>
     </div>
     <h4>График оценки влияния планет с ".$sd." по ".$ed."</h4>
-    <div id='graph' style='height: 300px; width: 800px; margin-top: 10px; margin-left: 20px; padding: 10px;'>
+    <div id='graph' style='height: 300px; width: 630px; margin-top: 10px;'>
         <svg class='rate shadowing' style='height: 100%; width: 100%; background: white; border-radius: 10px;padding: 0;'
-            xmlns='http://www.w3.org/2000/svg' version='1.1' 
+            xmlns='http://www.w3.org/2000/svg' version='1.1'
             xmlns:xlink='http://www.w3.org/1999/xlink'>
         </svg>
     </div>
@@ -189,6 +189,7 @@
     var rate = [];
     var aspect = [];
     ";
+
     echo "    rate.push([50, 0]);\n";
     $q = sizeOf($rate);
     for($i=0; $i<=30; $i++){
@@ -198,7 +199,7 @@
         echo "rate.push([".($k*25).",".(-$v*10)."]);\n";
         echo "aspect[$i] = '".$aspday[$i]."';\n";
     }
-    
+
     echo "rate.push([".($k*25).", 0]);\n";
     echo "
     makeline(rate, '#ccc', '#aaa', 2, 'cardinal');
@@ -236,7 +237,7 @@
                     $('#graph svg path:last').remove();
                     $('#graph svg *:last-child').remove();
                     online = 0;
-                }  
+                }
             })
             .on('click',function(){
                  yaCounter25119665.reachGoal('pipclick');
@@ -261,7 +262,7 @@
         $i++;
     }
     echo "
-        $(  '*', 
+        $(  '*',
             $('.rate').clone()
                 .appendTo('#minigraph')
         ).attr('transform', 'scale(0.4)');;

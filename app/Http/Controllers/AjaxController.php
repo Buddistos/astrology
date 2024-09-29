@@ -44,10 +44,10 @@ class AjaxController extends IndexController
                 $this->vars['astrogroups'] = AstroGroup::get();
                 $this->vars['gsk'] = $client->clientAstroKeys();
                 if($client->status == 1){
-                    $this->vars['view'] = $this->views[1];
+                    $this->vars['view'] = 1;
                     $out['html'] = view('partials.step2', $this->vars)->render();
                 } else {
-                    $this->vars['view'] = $this->views[2];
+                    $this->vars['view'] = 2;
                     $out['html'] = view('ajax.astro', $this->vars)->render();
                 }
             }

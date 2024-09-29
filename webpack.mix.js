@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-const $ = require('jquery')
 
 mix.options({
     processCssUrls: false // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.

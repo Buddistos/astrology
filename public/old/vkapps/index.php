@@ -50,7 +50,6 @@ if ($gsk && $uid) {
     for ($i = 1; $i <= 7; $i++) {
         $sk = md5($i . $gid . $udt);
 
-        var_dump($sk . '<br>');
         if ($gsk == $sk) {
             $id_gorogroup = $i;
         }

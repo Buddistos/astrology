@@ -14,7 +14,7 @@
     @else
         <div class='ourgoro shadowing' id='{{ $ag->_gorotable }}'
              title='Стоимость - 2 звезды'>
-            <a href='?gsk={{ $gsk[$key]}}&num={{$ag->id_gorogroup}}&udt={{ isset($astroDate) ? $astroDate : date('Ymd') }}'
+            <a href='?gsk={{ $gsk[$key+1]}}&num={{$ag->id_gorogroup}}&udt={{ isset($astroDate) ? $astroDate : date('Ymd') }}'
                class='more'>
                 <b></b>
             </a>
