@@ -44,9 +44,9 @@
     <div class="row mt-3">
         <p class="text-white text-center" style="font-size: 12px;">
             © 2014-2024 Андрей Перье и
-            <a href="#" target="_blank"
+            <a href="javascript:;"
                style="font-size: 12px; text-decoration: none; color: #777;">Интернет-группа
-                "Астроном и
+                "Астролог и
                 я"</a><br>
             Интерпретации разработаны с помощью
             команды профессиональных астрологов
@@ -60,7 +60,7 @@
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
 <script src="{{ asset('/js/jquery.toast.min.js') }}"></script>
-<script src="{{ asset('/js/d3.min.js') }}"></script>
+<script src="{{ asset('/js/d3.v7.min.js') }}"></script>
 
 @yield('js')
 
