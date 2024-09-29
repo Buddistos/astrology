@@ -39,9 +39,9 @@ class IndexController extends Controller
 
                 if (isset($_GET['gsk'])) {
                     $rules = [
-                        "gsk" => 'size:32',
-                        "num" => 'digits_between:0,7',
-                        "udt" => 'date_format:Ymd',
+                        "gsk" => 'required|size:32',
+                        "num" => 'required|digits_between:0,7',
+                        "udt" => 'required|date_format:Ymd',
                     ];
                     $messages = [
                         "size" => "Ошибка валидации запроса #1",
