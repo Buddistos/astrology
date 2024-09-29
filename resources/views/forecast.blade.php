@@ -21,7 +21,7 @@
         @foreach($aspects[$fordate] as $aspect)
             <div class="mb-2">
                 <img src="/images/{{ ($aspect['rating'] > 0 ? 'b_blu' : 'b_red').abs($aspect['rating']) }}.gif"
-                     style="float: left; margin-top: 7px;" align="left">
+                     style="float: left; margin-top: 7px;" align="left" alt="O">
                 <b>{!! $aspect['aspect'] !!}</b>
                 {{$aspect['interpretation']}}
             </div>
@@ -93,6 +93,9 @@
 
 @section('js')
     <script>
+        /**
+         * v. 0.1.29/09
+         **/
         $(document).ready(function () {
             var scl = 1.0;
             var width = $("#graph").width();
