@@ -1,5 +1,3 @@
-console.log('auth ');
-
 function onTelegramAuth(user) {
     user['method'] = 'tga';
     $.ajax({
@@ -16,7 +14,7 @@ function onTelegramAuth(user) {
 //            $("#authwin").html('<h5 class="float-end"><b>' + data.name + '</b></h5>');
 //            $("#userwin").html(data.html);
         },
-        error: function (jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR) {
             $('#modal_auth').modal('toggle');
             data = jqXHR.responseText;
             msg = data.msg;

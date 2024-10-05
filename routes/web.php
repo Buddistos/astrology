@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::any('ajax/{action}', 'App\Http\Controllers\AjaxController@_html')->name('ajax');
 
@@ -7,3 +9,10 @@ Route::get('vkapp', 'App\Http\Controllers\VKappController@index')->name('vkapp')
 Route::get('/', 'App\Http\Controllers\IndexController@index')->name('main');
 
 Auth::routes();
+
+// Маршрут для выхода
+Route::post('/logout', function () {
+    session()->forget('client_id');
+// Перенаправление на главную страницу после выхода
+    return redirect('/');
+})->name('logout');

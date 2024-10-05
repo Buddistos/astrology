@@ -24,9 +24,13 @@
                     <img src="/images/gohome.png" width="40"/>
                 </a>
             </div>
-            <div id="authwin" class="col-6">
+            <div id="authwin" class="col-6" class="float-end">
                 @if($auth)
-                    <h5 class="float-end"><b>{!! $client['name']  !!}</b></h5>
+                    <form method="post" action="{{ route('logout') }}" class="float-end flo">
+                        @csrf
+                        <button type="submit" class="btn btn-primary" >Выход</button>
+                    </form>
+                    <h5><b>{!! $client['name']  !!}</b></h5>
                 @else
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#modal_auth" style="float: right">
