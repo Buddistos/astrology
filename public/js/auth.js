@@ -1,12 +1,11 @@
 function onTelegramAuth(user) {
     user['method'] = 'tga';
+    user['_token'] = _token;
     $.ajax({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
         url: "/ajax/auth",
         type: "POST",
         data: user,
+        dataType: 'json',
         success: function (data) {
             $('#modal_auth').modal('toggle');
             messageAlert(data.msg)
