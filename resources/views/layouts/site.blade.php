@@ -40,6 +40,7 @@
             </div>
         </div>
         <div id="userwin" class="row pb-2">
+            <p>CSRF: {{ csrf_token() }}</p>
 
             @yield('content')
 
