@@ -35,6 +35,7 @@ class AjaxController extends IndexController
         if (isset($request['method'])) {
             $method = $request['method'];
             unset($request['method']);
+            unset($request['_token']);
             $out = ClientController::$method($request);
             if (!$out['err']) {
                 $client = $out['client'];
