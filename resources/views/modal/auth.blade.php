@@ -11,7 +11,7 @@
                 <h5>Телеграм:</h5>
                 <script async src="https://telegram.org/js/telegram-widget.js?22"
                         data-telegram-login="astro4me_bot" data-size="medium" data-radius="7"
-                        data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
+                        data-auth-url="auth?method=tga" data-request-access="write"></script>
             </div>
             <div class="modal-footer">
                 {{--

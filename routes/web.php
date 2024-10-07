@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::any('ajax/{action}', 'App\Http\Controllers\AjaxController@_html')->name('ajax');
 
+Route::get('auth', 'App\Http\Controllers\ClientController@auth')->name('auth');
+
 Route::get('vkapp', 'App\Http\Controllers\VKappController@index')->name('vkapp');
 
 Route::get('/', 'App\Http\Controllers\IndexController@index')->name('main');

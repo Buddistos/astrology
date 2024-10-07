@@ -13,50 +13,12 @@ class AjaxController extends IndexController
 {
     public function _html(Request $request, $action)
     {
-
         //--- Поиск Ajax метода для исполнения
         if (method_exists($this, $action)) {
             return $this->$action($request);
         }
 
         return false;
-    }
-
-    /**
-     * Авторизация через соцсети и мессенджеры
-     * @param Request $request
-     * @return $out
-     * msg - сообщение о результате
-     * err - наличие ошибки: 1 - есть, 0 - нет
-     * html - код для отображения на сайте в основном окне
-     */
-    public function auth(Request $request)
-    {
-        if (isset($request['method'])) {
-            $method = $request['method'];
-            unset($request['method']);
-            unset($request['_token']);
-            $out = ClientController::$method($request);
-            if (!$out['err']) {
-                $client = $out['client'];
-                $out['name'] = $client->firstname;
-                unset($out['client']);
-                $this->vars['client'] = $client;
-                $this->vars['astrogroups'] = AstroGroup::get();
-                $this->vars['gsk'] = $client->clientAstroKeys();
-                if($client->status == 1){
-                    $this->vars['view'] = 1;
-                    $out['html'] = view('partials.step2', $this->vars)->render();
-                } else {
-                    $this->vars['view'] = 2;
-                    $out['html'] = view('ajax.astro', $this->vars)->render();
-                }
-            }
-        } else {
-            $out['err'] = 1;
-            $out['msg'] = 'Неизвестный метод';
-        }
-        return $out;
     }
 
     public function vkapp()

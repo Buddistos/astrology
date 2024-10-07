@@ -2,12 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AstroGroup;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class ClientController extends Controller
 {
+
+    /**
+     * Авторизация через соцсети и мессенджеры
+     * @param Request $request
+     * @return $out
+     * msg - сообщение о результате
+     * err - наличие ошибки: 1 - есть, 0 - нет
+     * html - код для отображения на сайте в основном окне
+     */
+    public function auth(Request $request)
+    {
+        if (isset($request['method'])) {
+            $method = $request['method'];
+            unset($request['method']);
+            unset($request['_token']);
+            $out = self::$method($request);
+            if (!$out['err']) {
+                $client = $out['client'];
+                $out['name'] = $client->firstname;
+                unset($out['client']);
+                $this->vars['client'] = $client;
+                $this->vars['astrogroups'] = AstroGroup::get();
+                $this->vars['gsk'] = $client->clientAstroKeys();
+                if($client->status == 1){
+                    $this->vars['view'] = 1;
+                    $out['html'] = view('partials.step2', $this->vars)->render();
+                } else {
+                    $this->vars['views'] = 2;
+//                    return redirect('/');
+                    $out['html'] = view('ajax.astro', $this->vars)->render();
+                }
+            }
+        } else {
+            $out['err'] = 1;
+            $out['msg'] = 'Неизвестный метод';
+        }
+        return redirect('/');
+//        return $out;
+    }
+
     /**
      * @param $request
      * @return mixed
