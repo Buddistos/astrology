@@ -122,8 +122,9 @@ class ClientController extends Controller
                     }
                 }
                 $out['client'] = $client;
-                session(['client_id' => $client->id]);
-                session()->save();
+                //session(['client_id' => $client->id]);
+                \Session::put('client_id', $client->id);
+                //session()->save();
             }
         } else {
             $out['err'] = 1;

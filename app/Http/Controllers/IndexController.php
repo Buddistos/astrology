@@ -22,7 +22,7 @@ class IndexController extends Controller
 
     public function index()
     {
-        $client_id = session('client_id');
+        $client_id = \Session::get('client_id');
         $this->vars['auth'] = 0;
         if ($client_id) {
             $client = Client::where('id', $client_id)->first();
