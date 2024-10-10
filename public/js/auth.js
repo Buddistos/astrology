@@ -1,7 +1,9 @@
 function onTelegramAuth(user) {
     user['method'] = 'tga';
-    user['_token'] = _token;
     $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': token
+        },
         url: "/ajax/auth",
         type: "POST",
         data: user,

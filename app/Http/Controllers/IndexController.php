@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AstroGroup;
 use App\Models\Client;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Validator;
 
 class IndexController extends Controller
@@ -22,7 +23,7 @@ class IndexController extends Controller
 
     public function index()
     {
-        $client_id = \Session::get('client_id');
+        $client_id =Cookie::get('client_id');
         $this->vars['auth'] = 0;
         if ($client_id) {
             $client = Client::where('id', $client_id)->first();

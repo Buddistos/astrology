@@ -65,7 +65,6 @@
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
 <script src="{{ asset('/js/jquery.toast.min.js') }}"></script>
 <script src="{{ asset('/js/d3.v7.min.js') }}"></script>
-<script> var _token = '{{ csrf_token() }}'; </script>
 
 @yield('js')
 

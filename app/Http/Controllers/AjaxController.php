@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AstroGroup;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Validator;
 
 use function App\Http\settings;
@@ -41,7 +42,7 @@ class AjaxController extends IndexController
 
     public function profilechange(Request $request)
     {
-        $client_id = session('client_id');
+        $client_id =Cookie::get('client_id');
         $out['err'] = 0;
         if ($client_id) {
             $rules = [

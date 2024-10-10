@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
 Route::any('ajax/{action}', 'App\Http\Controllers\AjaxController@_html')->name('ajax');
 
@@ -14,7 +15,7 @@ Auth::routes();
 
 // Маршрут для выхода
 Route::post('/logout', function () {
-    session()->forget('client_id');
+    Cookie::expire('client_id');
 // Перенаправление на главную страницу после выхода
     return redirect('/');
 })->name('logout');

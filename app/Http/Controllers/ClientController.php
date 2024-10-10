@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AstroGroup;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Validator;
 
 class ClientController extends Controller
@@ -122,9 +123,8 @@ class ClientController extends Controller
                     }
                 }
                 $out['client'] = $client;
-                //session(['client_id' => $client->id]);
-                \Session::put('client_id', $client->id);
-                //session()->save();
+                Cookie::queue('client_id', "$client->id", 60);
+
             }
         } else {
             $out['err'] = 1;
