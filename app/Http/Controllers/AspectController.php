@@ -138,7 +138,7 @@ class AspectController extends Controller
                             if (isset($aspect->aspects)) {
                                 $r['interpretation'] = $aspect->aspects;
                                 $r['symbol'] = $this->symbols[$tp] . ' ' . $this->symorb[$dc] . ' ' . $this->symbols[$np];
-                                $r['aspect'] = $this->transit[$tp] . ' ' . $this->planet1[$tp] . ' ' . $this->inorb[$dc] . ' с ' . $this->planet2[$np] . ' - <span style="font-family: fantasy; font-size: 16px;">' . $this->symbols[$tp] . ' ' . $this->symorb[$dc] . ' ' . $this->symbols[$np] . '</span> (орбис ' . $c . ', угол ' . $dc . ')<br>';
+                                $r['aspect'] = $this->transit[$tp] . ' ' . $this->planet1[$tp] . ' ' . $this->inorb[$dc] . ' с ' . $this->planet2[$np] . ' - <span style="font-family: fantasy; font-size: 16px;">' . $this->symbols[$tp] . ' ' . $this->symorb[$dc] . ' ' . $this->symbols[$np] . '</span><br>';
                                 $rate = $aspect->rating > 100 ? 100 - $aspect->rating : $aspect->rating;
                                 $r['rating'] = (abs($rate)-abs($c)<=0 ? 1 : abs($rate)-abs($c))*$rate/abs($rate);
                                 $result[] = $r;

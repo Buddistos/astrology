@@ -11,6 +11,9 @@ Route::get('vkapp', 'App\Http\Controllers\VKappController@index')->name('vkapp')
 
 Route::get('/', 'App\Http\Controllers\IndexController@index')->name('main');
 
+//Route::get('/astro', '\App\Http\Controllers\TelegramController@handleCallback')->name('astro');
+Route::get('/astro', '\App\Http\Controllers\TelegramController@showView')->name('astro');
+
 Auth::routes();
 
 // Маршрут для выхода
