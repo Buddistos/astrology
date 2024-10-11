@@ -86,7 +86,7 @@
 
 <script>
     let tg = window.Telegram.WebApp;
-
+//    alert(tg.initDataUnsafe.user.username);
     let fBtn = document.getElementsByClassName("f-btn")[0]
     let sBtn = document.getElementsByClassName("s-btn")[0]
 
@@ -96,7 +96,7 @@
     });
 
     sBtn.addEventListener("click", () => {
-        tg.close();
+        alert("!")
     });
 </script>
 </body>

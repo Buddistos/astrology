@@ -12,6 +12,7 @@ class TelegramController extends Controller
         // Получаем данные от Telegram
         $authData = $request->all();
 
+        return response();
         // Проверяем данные
         if ($this->validateTelegramAuth($authData)) {
             // Данные проверены, можно получить информацию о пользователе
@@ -44,7 +45,7 @@ class TelegramController extends Controller
             ->sort()
             ->implode("\n");
 
-        $secretKey = hash('sha256', env('TELEGRAM_BOT_TOKEN'), true);
+        $secretKey = hash('sha256', env('TG_BOT_TOKEN'), true);
         $hash = hash_hmac('sha256', $dataCheckString, $secretKey);
 
         return hash_equals($hash, $checkHash);
@@ -53,7 +54,7 @@ class TelegramController extends Controller
     public function showView(Request $request)
     {
         dd($request);
-
+        return view('mini-apps.tgbot', ['request' => $request]);
         // Получаем данные пользователя от Telegram
         $authData = $request->all();
 
