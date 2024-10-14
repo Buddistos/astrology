@@ -1,44 +1,46 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    @include('partials.metas')
 
-    <!-- Basic Page Needs
-    ================================================== -->
-    <title>@yield('title')</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/jquery.toast.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/styles.css') }}" rel="stylesheet">
 
-    <!-- Favicon icon -->
-    <link rel="shortcut icon" href="/upload/storage/favicon.ico" type="image/x-icon">
+    <!-- Google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Seymour+Display|Marmelad&subset=cyrillic' rel='stylesheet'>
 
-    @stack('head')
+    @yield('css')
 
-    @stack('styles')
-
-    <link rel="stylesheet" href="/css/custom.css">
-
-    {!! settings('in_head') !!}
-
+    {!! setting('in_head') !!}
 </head>
 <body>
+<div class="container mt-2">
+    <div class="offset-lg-3 col-lg-6 p-3" id="astrowin">
+        <div class="header clearfix mb-1">
+            <a href="/astro" class="float-start">
+                <img src="/images/gohome.png" width="40"/>
+            </a>
+            <b id="username" class="float-end"></b>
+        </div>
+        <div id="userwin" class="row pb-2">
 
-{{--
-@section('header')
-    @include('partials.header.header')
-@show
---}}
+            @yield('content')
+
+        </div>
+    </div>
+</div>
+</body>
 
 
-@yield('content')
+<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/js/jquery.min.js') }}"></script>
+<script src="{{ asset('/js/jquery.toast.min.js') }}"></script>
+<script src="{{ asset('/js/d3.v7.min.js') }}"></script>
 
-{{--
-@section('footer')
-    @include('partials.footer.footer')
-@show
---}}
+@yield('js')
 
-    @stack('scripts')
+{!! setting('in_body') !!}
 
 </body>
 </html>

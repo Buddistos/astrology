@@ -2,30 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Http;
+use function PHPUnit\Framework\isNull;
 
 class TelegramController extends Controller
 {
-    public function handleCallback(Request $request)
+
+    public function index()
+    {
+        //$this->vars['auth'] = 1;
+        return view('mini-apps.tgbot', $this->vars);
+    }
+
+    public function auth(Request $request)
     {
         // Получаем данные от Telegram
         $authData = $request->all();
 
-        return response();
+        unset($authData['method']);
+        unset($authData['_token']);
+
+        /// $client = ClientController::tga($authData);
         // Проверяем данные
         if ($this->validateTelegramAuth($authData)) {
-            // Данные проверены, можно получить информацию о пользователе
-            $user = [
-                'id' => $authData['id'],
-                'first_name' => $authData['first_name'],
-                'last_name' => $authData['last_name'] ?? '',
-                'username' => $authData['username'] ?? '',
-                'photo_url' => $authData['photo_url'] ?? ''
-            ];
+            $user = json_decode($authData['user'], true);
+            $client = Client::where('app', 'tga')->where('telegram_id', $user['id'])->first();
 
-            // Сохраняем пользователя или используем для логики приложения
-            return response()->json($user);
+            if(!$client){
+                $user['app'] = 'tga';
+                $client = Client::create($user);
+            }
+
+            if ($client) {
+                Cookie::queue('client_id', $client->id, 60);
+                setcookie('user_id', $client->id, 60);
+                $out['html'] = view('partials/step2')->render();
+                $out['name'] = $client->firstname;
+                $out['msg'] = '';
+            }else{
+                $out['err'] = 1;
+                $out['msg'] = ' Ошибка';
+            }
+            return $out;
         } else {
             // Ошибка проверки данных
             return response()->json(['error' => 'Invalid data'], 401);
@@ -34,7 +55,6 @@ class TelegramController extends Controller
 
     private function validateTelegramAuth($authData)
     {
-        // Верификация данных на основе hash-подписи
         $checkHash = $authData['hash'];
         unset($authData['hash']);
 
@@ -45,27 +65,9 @@ class TelegramController extends Controller
             ->sort()
             ->implode("\n");
 
-        $secretKey = hash('sha256', env('TG_BOT_TOKEN'), true);
+        $secretKey = hash_hmac('sha256', $_ENV['TG_BOT_TOKEN'], "WebAppData", true);
         $hash = hash_hmac('sha256', $dataCheckString, $secretKey);
 
         return hash_equals($hash, $checkHash);
     }
-
-    public function showView(Request $request)
-    {
-        dd($request);
-        return view('mini-apps.tgbot', ['request' => $request]);
-        // Получаем данные пользователя от Telegram
-        $authData = $request->all();
-
-        // Проверяем данные Telegram (это важно для безопасности)
-        if ($this->validateTelegramAuth($authData)) {
-            // Данные проверены, передаём их во view
-            return view('mini-apps.tgbot', ['user' => $authData]);
-        } else {
-            // Ошибка проверки данных, можно перенаправить на страницу ошибки или вывести сообщение
-            return response()->json(['error' => 'Invalid data'], 401);
-        }
-    }
-
 }

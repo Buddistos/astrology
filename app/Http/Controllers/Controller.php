@@ -12,4 +12,9 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public $vars;
 
+    public function __construct()
+    {
+        $this->vars['sitename'] = setting('site_name');
+        $this->vars['auth'] = 0;
+    }
 }

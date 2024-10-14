@@ -25,6 +25,7 @@ class ClientController extends Controller
             $method = $request['method'];
             unset($request['method']);
             unset($request['_token']);
+            unset($request['query_id']);
             $out = self::$method($request);
             if (!$out['err']) {
                 $client = $out['client'];
@@ -65,13 +66,16 @@ class ClientController extends Controller
      * "hash" => "01469d6c1459151a3e93366176dea1e8cbfbd76333e8de8b9539f6f3d7462e8e"
      * ]
      */
-    public function tga($request)
+    public function tga($request, $key = null)
     {
         if (isset($request['hash'])) {
             $auth_data = $request->all();
             $check_hash = $auth_data['hash'];
 
             unset($auth_data['hash']);
+            unset($auth_data['method']);
+            unset($auth_data['_token']);
+
             $data_check_arr = [];
 
             foreach ($auth_data as $key => $value) {
@@ -80,7 +84,13 @@ class ClientController extends Controller
             sort($data_check_arr);
 
             $data_check_string = implode("\n", $data_check_arr);
-            $secret_key = hash('sha256', $_ENV['TG_BOT_TOKEN'], true);
+
+            if($key){
+                $secret_key = hash_hmac('sha256', $_ENV['TG_BOT_TOKEN'], $key, true);
+            }else {
+                $secret_key = hash('sha256', $_ENV['TG_BOT_TOKEN'], true);
+            }
+
             $hash = hash_hmac('sha256', $data_check_string, $secret_key);
 
             $out['err'] = 0;
@@ -91,40 +101,16 @@ class ClientController extends Controller
                 $out['err'] = 1;
                 $out['msg'] = 'Время ожидания вышло';
             } else {
-                $clients = Client::class;
-                $client = $clients::where('telegram_id', $auth_data['id'])->where('app', 'tga')->first();
+                $client = Client::where('telegram_id', $auth_data['id'])->where('app', 'tga')->first();
 
                 //Проверка наличия зрегистрированного пользователя
                 if ($client) {
                     $out['msg'] = '<h5 class="text-center"><b>' . $auth_data['first_name'] . '</b></h5>';
                 } else {
-                    $client = new Client();
-                    $validator = Validator::make($auth_data, [
-                        "id" => "required|max:255",
-                        "username" => "required|max:255",
-                        "first_name" => "max:255",
-                        "last_name" => "max:255",
-                        "photo_url" => "max:255",
-//                        "auth_date" => "1717798888",
-                    ]);
-                    if ($validator->fails()) {
-                        $out['err'] = 1;
-                        $out['msg'] = 'Ошибка регистрации';
-                    } else {
-                        $client['telegram_id'] = $auth_data['id'];
-                        $client['name'] = $auth_data['username'];
-                        $client['firstname'] = isset($auth_data['first_name']) ? $auth_data['first_name'] : $auth_data['username'];
-                        $client['lastname'] = $auth_data['last_name'];
-                        $client['avatar'] = $auth_data['photo_url'];
-                        $client['app'] = 'tga';
-                        $client['status'] = 1;
-                        $client->save();
-                        $out['msg'] = $auth_data['first_name'] . ', Вы зарегистрированы';
-                    }
+                    $create->create($auth_data);
                 }
                 $out['client'] = $client;
                 Cookie::queue('client_id', "$client->id", 60);
-
             }
         } else {
             $out['err'] = 1;
@@ -132,4 +118,54 @@ class ClientController extends Controller
         }
         return $out;
     }
+
+    public function profilechange(Request $request)
+    {
+        $client_id =Cookie::get('client_id');
+        $out['err'] = 0;
+        if ($client_id) {
+            $rules = [
+                "utc" => 'required|max:6',
+                "birthday" => 'required|date_format:Y-m-d',
+                "birthtime" => "required|date_format:H:i",
+            ];
+            $messages = [
+                "max" => "Неверный формат поля :attributes",
+                "date_format" => "Неверный формат для :attributes",
+                "required" => "Поле :attributes должно быть заполнено.",
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            $out['msg'] = '';
+            if ($validator->fails()) {
+                foreach($validator->errors()->all() as $field => $error){
+                    $out['msg'] .= $error . '<br>';
+
+                }
+                $failedRules = $validator->failed();
+                $out['err'] = 1;
+            }else{
+                $client = Client::where('id', $client_id)->first();
+                /**
+                 * TODO
+                 * Создать проверку на изменение уже созданных полей
+                 * Изменение возможно не чаще, чем раз в две недели
+                 */
+                $client->utc = $request['utc'];
+                $client->birthday = $request['birthday'];
+                $client->birthtime = $request['birthtime'];
+                $client->status = 2;
+                $client->save();
+                $out['msg'] = "Сохранено";
+                $this->vars = $client->toArray();
+                $this->vars['astrogroups'] = AstroGroup::get();
+                $this->vars['gsk'] = $client->clientAstroKeys();
+                $out['html'] = view('ajax.astro', $this->vars)->render();
+            }
+        }else{
+            $out['err'] = 1;
+            $out['msg'] = "Ошибка авторизации";
+        }
+        return $out;
+    }
+
 }

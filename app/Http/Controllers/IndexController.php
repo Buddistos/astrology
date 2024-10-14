@@ -18,7 +18,6 @@ class IndexController extends Controller
     public function __construct()
     {
         $this->vars['sitename'] = setting('site_name');
-        $this->vars['views'] = $this->views;
     }
 
     public function index()
