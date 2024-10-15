@@ -90,6 +90,7 @@
                 error: function (jqXHR) {
                     console.log('Error');
                     data = jqXHR.responseText;
+                    console.log((data));
                     msg = data.msg;
                     $.map(JSON.parse(data), function (message, field) {
                         msg += '<br>' + message;

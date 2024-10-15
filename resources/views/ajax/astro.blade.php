@@ -25,3 +25,50 @@
     @endif
 @endforeach
 
+@isset($tga)
+    <script>
+        $(".more").click(function (event) {
+            event.preventDefault(); // Предотвращаем стандартное поведение формы
+
+            var href = $(this).attr('href');
+
+            // Разбиваем href на URL и query string
+            var [url, queryString] = href.split('?');
+
+            queryString += '&' + tg.initData;
+            // Парсим query string в объект
+            var params = {};
+            if (queryString) {
+                queryString.split('&').forEach(function(param) {
+                    var [key, value] = param.split('=');
+                    params[key] = decodeURIComponent(value);
+                });
+            }
+            params['_token'] = '{{ csrf_token() }}';
+
+            /*
+            .forEach(function(field) {
+                params[field.name] = field.value;
+            });
+*/
+
+            console.log(params);
+            // Отправляем AJAX-запрос методом POST
+            $.ajax({
+                type: 'POST',
+                url: 'astroview',
+                data: params,
+                success: function(data) {
+                    console.log('Успешно отправлено!', data);
+                    $('#userwin').html(data.html);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Ошибка отправки:', error);
+                    showTelegramAlert(error);
+                }
+            });
+
+            console.log(this);
+        });
+    </script>
+@endisset

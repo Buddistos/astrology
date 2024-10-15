@@ -14,6 +14,8 @@ Route::get('/', 'App\Http\Controllers\IndexController@index')->name('main');
 //Route::get('/astro', '\App\Http\Controllers\TelegramController@handleCallback')->name('astro');
 Route::get('/astro', '\App\Http\Controllers\TelegramController@index')->name('astro');
 Route::post('/tga', '\App\Http\Controllers\TelegramController@auth')->name('tgauth');
+Route::post('/addfields', '\App\Http\Controllers\ClientController@addfields')->name('addfields');
+Route::post('/astroview', '\App\Http\Controllers\TelegramController@astroview')->name('astroview');
 
 Auth::routes();
 

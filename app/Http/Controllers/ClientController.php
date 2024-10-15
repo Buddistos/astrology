@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AstroGroup;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Validator;
 
@@ -34,7 +35,7 @@ class ClientController extends Controller
                 $this->vars['client'] = $client;
                 $this->vars['astrogroups'] = AstroGroup::get();
                 $this->vars['gsk'] = $client->clientAstroKeys();
-                if($client->status == 1){
+                if ($client->status == 1) {
                     $this->vars['view'] = 1;
                     $out['html'] = view('partials.step2', $this->vars)->render();
                 } else {
@@ -85,10 +86,10 @@ class ClientController extends Controller
 
             $data_check_string = implode("\n", $data_check_arr);
 
-            if($key){
-                $secret_key = hash_hmac('sha256', $_ENV['TG_BOT_TOKEN'], $key, true);
-            }else {
-                $secret_key = hash('sha256', $_ENV['TG_BOT_TOKEN'], true);
+            if ($key) {
+                $secret_key = hash_hmac('sha256', config('tg.bot_token'), $key, true);
+            } else {
+                $secret_key = hash('sha256', config('tg.bot_token'), true);
             }
 
             $hash = hash_hmac('sha256', $data_check_string, $secret_key);
@@ -107,7 +108,7 @@ class ClientController extends Controller
                 if ($client) {
                     $out['msg'] = '<h5 class="text-center"><b>' . $auth_data['first_name'] . '</b></h5>';
                 } else {
-                    $create->create($auth_data);
+                    $client->create($auth_data);
                 }
                 $out['client'] = $client;
                 Cookie::queue('client_id', "$client->id", 60);
@@ -119,11 +120,30 @@ class ClientController extends Controller
         return $out;
     }
 
-    public function profilechange(Request $request)
+    public function addfields(Request $request)
     {
-        $client_id =Cookie::get('client_id');
-        $out['err'] = 0;
-        if ($client_id) {
+        $data = $request->all();
+        $newdata = [
+            "utc" => $data['utc'] ?? '',
+            "birthday" => $data['birthday'] ?? '',
+            "birthtime" => $data['birthtime'] ?? '',
+        ];
+        $data = Arr::except($data, array_keys($newdata));
+        unset($data['_token']);
+        $verify = TelegramController::validateTelegramAuth($data);
+        if(!$verify){
+            /**TODO
+             * Сделать вывод ошибки авторизации
+             */
+            $out['msg'] = 'Ошибка авторизации #1';
+            $out['err'] = 1;
+            return $out;
+        }
+        $user = json_decode($data['user']);
+        $client_id = Cookie::get('client_id');
+        $client = Client::where('id', $client_id)->where('telegram_id', $user->id)->first();
+
+        if ($client) {
             $rules = [
                 "utc" => 'required|max:6',
                 "birthday" => 'required|date_format:Y-m-d',
@@ -134,20 +154,19 @@ class ClientController extends Controller
                 "date_format" => "Неверный формат для :attributes",
                 "required" => "Поле :attributes должно быть заполнено.",
             ];
-            $validator = Validator::make($request->all(), $rules, $messages);
+            $validator = Validator::make($newdata, $rules, $messages);
             $out['msg'] = '';
             if ($validator->fails()) {
-                foreach($validator->errors()->all() as $field => $error){
+                foreach ($validator->errors()->all() as $field => $error) {
                     $out['msg'] .= $error . '<br>';
 
                 }
                 $failedRules = $validator->failed();
                 $out['err'] = 1;
-            }else{
-                $client = Client::where('id', $client_id)->first();
+            } else {
                 /**
                  * TODO
-                 * Создать проверку на изменение уже созданных полей
+                 * Создать проверку на изменение по времени уже созданных полей
                  * Изменение возможно не чаще, чем раз в две недели
                  */
                 $client->utc = $request['utc'];
@@ -161,7 +180,7 @@ class ClientController extends Controller
                 $this->vars['gsk'] = $client->clientAstroKeys();
                 $out['html'] = view('ajax.astro', $this->vars)->render();
             }
-        }else{
+        } else {
             $out['err'] = 1;
             $out['msg'] = "Ошибка авторизации";
         }

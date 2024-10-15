@@ -92,4 +92,30 @@
             </div>
         </div>
     </div>
+    @isset($tga)
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    @endisset
 </form>
+@isset($tga)
+    <script>
+        $('#addForm').submit(function (event) {
+            event.preventDefault(); // Предотвращаем стандартное поведение формы
+
+            // Сохраняем данные формы в переменной
+            var formData = $(this).serialize() + "&" + tg.initData;
+            $.ajax({
+                type: 'POST', // Метод отправки
+                url: '/addfields', // URL для обработки данных на сервере
+                data: formData, // Данные формы
+                success: function (data) {
+                    $("#userwin").html(data.html);
+                },
+                error: function (xhr, status, error) {
+                    // Обработка ошибок
+                    console.error('Ошибка при отправке формы: ' + error);
+                    showTelegramAlert('Ошибка авторизации');
+                }
+            });
+        });
+    </script>
+@endisset
