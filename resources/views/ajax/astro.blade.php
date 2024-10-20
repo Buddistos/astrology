@@ -5,12 +5,14 @@
 </h4>
 @foreach($astrogroups as $key => $ag)
     @if($ag->_gorotable == '_sex')
+{{--
         <div style='width: 323px; height: 100px; text-align: left; background: white;' class='ourgoro shadowing'>
             <p style='margin: 10px;'>Сексуальный гороскоп предоставляется только лицам, достигшим
                 18-ти
                 лет.
                 Просмотр гороскопа стоит 7 звезд.</p>
         </div>
+--}}
     @else
         <div class='ourgoro shadowing' id='{{ $ag->_gorotable }}'
              title='Стоимость - 2 звезды'>

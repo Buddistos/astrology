@@ -2,52 +2,59 @@
 
 @section('css')
     <link href="{{ asset('/css/styles-tmp.css') }}" rel="stylesheet">
-@endsection
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-        font-family: marmelad;
-        /*
-        color: var(--tg-theme-text-color);
-        background: var(--tg-theme-bg-color);
-         */
-    }
-    .main {
-        width: 100%;
-/*        text-align: center;*/
-    }
-    #userwin small {
-        text-align: left;
-    }
-    .main h1 {
-        font-size: 22px;
-        text-align: center;
-        white-space: pre;
-    }
-    .main h2 {
-        font-size: 20px;
-        text-align: left;
-        white-space: pre;
-    }
-    .main .btn-info{
-        text-align: center;
-    }
-    #username{
-        font-size: 22px;
-        white-space: pre;
-        width: 270px;
-        overflow: hidden;
-        text-align: right;
-    }
-    .f-btn{
-        width: 100%;
-    }
-</style>
+        body {
+            font-family: marmelad;
+            /*
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+             */
+        }
+
+        .main {
+            width: 100%;
+            /*        text-align: center;*/
+        }
+
+        #userwin small {
+            text-align: left;
+        }
+
+        .main h1 {
+            font-size: 22px;
+            text-align: center;
+            white-space: pre;
+        }
+
+        .main h2 {
+            font-size: 20px;
+            text-align: left;
+            white-space: pre;
+        }
+
+        .main .btn-info {
+            text-align: center;
+        }
+
+        #username {
+            font-size: 22px;
+            white-space: pre;
+            width: 270px;
+            overflow: hidden;
+            text-align: right;
+        }
+
+        .f-btn {
+            width: 100%;
+        }
+    </style>
+@endsection
 
 @section('content')
     <div class="main">
