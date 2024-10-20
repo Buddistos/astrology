@@ -20,9 +20,11 @@
                class='more'>
                 <b></b>
             </a>
+{{--
             <div style='position: absolute; margin-top: 0px; margin-left: 95px;'>
                 <img src='/images/viewed.png' width='30'/>
             </div>
+--}}
         </div>
     @endif
 @endforeach
