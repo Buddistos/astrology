@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Cookie;
 
 Route::any('ajax/{action}', 'App\Http\Controllers\AjaxController@_html')->name('ajax');
 
-Route::get('auth', 'App\Http\Controllers\ClientController@auth')->name('auth');
+Route::get('/auth', 'App\Http\Controllers\ClientController@auth')->name('auth');
 
 Route::get('vkapp', 'App\Http\Controllers\VKappController@index')->name('vkapp');
 

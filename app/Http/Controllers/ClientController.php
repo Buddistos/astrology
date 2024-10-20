@@ -67,7 +67,7 @@ class ClientController extends Controller
      * "hash" => "01469d6c1459151a3e93366176dea1e8cbfbd76333e8de8b9539f6f3d7462e8e"
      * ]
      */
-    public function tga($request, $key = null)
+    public function tga($request, $tgkey = null)
     {
         if (isset($request['hash'])) {
             $auth_data = $request->all();
@@ -83,11 +83,10 @@ class ClientController extends Controller
                 $data_check_arr[] = $key . '=' . $value;
             }
             sort($data_check_arr);
-
             $data_check_string = implode("\n", $data_check_arr);
 
-            if ($key) {
-                $secret_key = hash_hmac('sha256', config('tg.bot_token'), $key, true);
+            if ($tgkey) {
+                $secret_key = hash_hmac('sha256', config('tg.bot_token'), $tgkey, true);
             } else {
                 $secret_key = hash('sha256', config('tg.bot_token'), true);
             }

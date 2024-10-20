@@ -53,7 +53,7 @@
     <div class="main">
         <h1>Персональный астропрогноз</h1>
         <button class="btn btn-info f-btn">Читать астропрогноз на сегодня</button>
-        <div id="userwin">
+        <div>
             @include('partials/tgmain')
         </div>
     </div>

@@ -5,7 +5,7 @@
 </h4>
 @foreach($astrogroups as $key => $ag)
     @if($ag->_gorotable == '_sex')
-        <div style='width: 265px; text-align: left; background: white;' class='ourgoro shadowing'>
+        <div style='width: 323px; height: 100px; text-align: left; background: white;' class='ourgoro shadowing'>
             <p style='margin: 10px;'>Сексуальный гороскоп предоставляется только лицам, достигшим
                 18-ти
                 лет.
@@ -18,7 +18,7 @@
                class='more'>
                 <b></b>
             </a>
-            <div style='position: absolute; margin-top: -25px; margin-left: 75px;'>
+            <div style='position: absolute; margin-top: 0px; margin-left: 95px;'>
                 <img src='/images/viewed.png' width='30'/>
             </div>
         </div>

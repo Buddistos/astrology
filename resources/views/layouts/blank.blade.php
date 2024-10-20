@@ -15,7 +15,7 @@
     {!! setting('in_head') !!}
 </head>
 <body>
-<div class="container mt-2">
+<div class="container mt-2 mb-2">
     <div class="offset-lg-3 col-lg-6 p-3" id="astrowin">
         <div class="header clearfix mb-1">
             <a href="/astro" class="float-start">

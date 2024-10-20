@@ -2,7 +2,8 @@ body{
     background: url("../images/bg3.jpg");
 }
 #astrowin{
-    background: url("../images/blockbg.jpg");
+    /*background: url("../images/blockbg.jpg");*/
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../images/blockbg.jpg);
     border-radius: 15px;
     -webkit-box-shadow: 0px 0px 25px rgba(255,255,255,0.7);
     -moz-box-shadow: 0px 0px 25px rgba(255,255,255,0.7);
@@ -27,8 +28,10 @@ body{
     color: orangered;
 }
 .ourgoro{
-    width: 108px;
-    height: 125px;
+/*    width: 108px;
+    height: 125px;*/
+    width: 137px;
+    height: 160px;
     float: left;
     text-align: center;
     border-radius: 15px;

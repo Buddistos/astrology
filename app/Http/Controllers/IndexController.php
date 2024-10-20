@@ -18,6 +18,7 @@ class IndexController extends Controller
     public function __construct()
     {
         $this->vars['sitename'] = setting('site_name');
+        $this->vars['views'] = $this->views;
     }
 
     public function index()
@@ -96,6 +97,7 @@ class IndexController extends Controller
                 $this->vars['gsk'] = $client->clientAstroKeys();
             }
         }
+
         return view('welcome', $this->vars);
     }
 }
