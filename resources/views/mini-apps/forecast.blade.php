@@ -1,3 +1,4 @@
+<h2>{{ $astroname }}</h2>
 @if(!$aspects[$fordate]->isEmpty())
     @foreach($aspects[$fordate] as $aspect)
         <div class="mb-2">
@@ -259,7 +260,7 @@
         maketext('{{ $aspects->keys() ->first()}}', shift + step + 2, 15, '#555', '');
         maketext('{{ $aspects->keys()->last() }}', width - 60, 15, '#555', '');
 
-        {!! implode($dayline, "\n") !!}
+        {!! implode("\n", $dayline) !!}
     });
 
 </script>

@@ -18,7 +18,7 @@
 <div class="container mt-2 mb-2">
     <div class="offset-lg-3 col-lg-6 p-3" id="astrowin">
         <div class="header clearfix mb-1">
-            <a href="/astro" class="float-start">
+            <a href="javascript:;" class="float-start f-btn">
                 <img src="/images/gohome.png" width="40"/>
             </a>
             <b id="username" class="float-end"></b>
@@ -33,10 +33,13 @@
 </body>
 
 
+<script src="{{ asset('/js/scripts.js') }}"></script>
+{{--
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
 <script src="{{ asset('/js/jquery.toast.min.js') }}"></script>
 <script src="{{ asset('/js/d3.v7.min.js') }}"></script>
+--}}
 
 @yield('js')
 

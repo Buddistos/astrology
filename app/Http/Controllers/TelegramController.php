@@ -86,7 +86,6 @@ class TelegramController extends Controller
     public function astroview(Request $request)
     {
         $data = $request->all();
-
         $gskdata = [
             "gsk" => $data['gsk'] ?? '',
             "num" => $data['num'] ?? '',
@@ -94,6 +93,7 @@ class TelegramController extends Controller
         ];
         $data = Arr::except($data, array_keys($gskdata));
         unset($data['_token']);
+
         $verify = TelegramController::validateTelegramAuth($data);
         if ($verify && isset($request->gsk)) {
             $user = json_decode($data['user']);
@@ -140,6 +140,7 @@ class TelegramController extends Controller
                     $astroday = date("Ymd", strtotime($aspday));
                     $aspect->astrourl = 'gsk=' . md5($request->num . $client->id . $astroday) . '&num=' .$request->num . '&udt=' . $astroday;
                 });
+
                 $this->vars['maxsumrating'] = $aspects->max('sum');
                 $this->vars['minsumrating'] = $aspects->min('sum');
                 $this->vars['aspects'] = $aspects;
@@ -159,6 +160,5 @@ class TelegramController extends Controller
         } else {
             $this->vars['view'] = $client->status;
         }
-
     }
 }

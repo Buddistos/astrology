@@ -5,7 +5,7 @@ mix.options({
 });
 
 /*
- |--------------------------------------------------------------------------
+ |-----------------nom ---------------------------------------------------------
  | Mix Asset Management
  |--------------------------------------------------------------------------
  |
@@ -14,5 +14,5 @@ mix.options({
  | file for the application as well as bundling up all the JS files.
  |
  */
-mix.js('resources/js/app.js', 'public/js/scripts.js')
-   .sass('resources/css/app.scss','public/css/styles.css');
+mix.js('resources/js/app.js', 'public/js/scripts.js');
+mix.sass('resources/css/app.scss','public/css/styles.css');

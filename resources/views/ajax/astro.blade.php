@@ -63,7 +63,6 @@
                 url: 'astroview',
                 data: params,
                 success: function(data) {
-                    console.log('Успешно отправлено!', data);
                     $('#userwin').html(data.html);
                 },
                 error: function(xhr, status, error) {
